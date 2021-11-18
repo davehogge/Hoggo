@@ -1,0 +1,81 @@
+// Footer
+.page-footer {
+  background: hsl(0, 0%, 20%);
+  border-top: 0.5rem solid hsl(38, 40%, 61%);
+  color: hsl(312, 3%, 66%);
+	font-size: 1rem;
+  margin: 0;
+  padding: 3rem 0;
+  text-align: left;
+  width: 100%;
+
+  .footer-container {
+  	line-height: 1.65;
+  	margin: 0 auto;
+  	position: relative;
+  	text-align: center;
+  	width: auto;
+  	z-index: 1;
+
+    @include touch {
+      padding-left: 1rem;
+      padding-right: 1rem
+    }
+
+  }
+
+  ul {
+  	display: inline-block;
+  	float: none;
+  	width: auto;
+
+    @include touch {
+      margin-top: 1.5em
+    }
+
+    li {
+    	display: inline-block;
+    	float: left;
+    	margin: 0 2.5em .05em 0;
+
+      @include touch {
+    		margin: 0;
+        width: 100%;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      a {
+      	color: hsl(312, 3%, 66%);
+        text-decoration: none;
+      	text-transform: capitalize;
+
+        @include touch {
+          background: hsl(280, 1%, 58%);
+      		border-radius: 3px;
+      		color: hsl(0, 0%, 20%);
+      		display: block;
+      		padding: .5em 1em;
+      		margin-bottom: 1em;
+      		text-align: center;
+      		width: auto;
+        }
+
+      }
+
+      a:hover {
+        text-decoration: underline;
+
+        @include touch {
+          color: hsl(218, 9%, 41%);
+        }
+
+      }
+
+    }
+
+  }
+
+}

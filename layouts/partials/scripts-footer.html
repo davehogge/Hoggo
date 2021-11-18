@@ -1,0 +1,29 @@
+{{- $throttle := resources.Get "js/throttle.js" | resources.ExecuteAsTemplate (printf "%s/js/throttle-rendered.js" .Lang) . -}}
+{{- $backToTop := resources.Get "js/back-to-top.js" | resources.ExecuteAsTemplate (printf "%s/js/back-to-top-rendered.js" .Lang) . -}}
+{{- $wrapTable := resources.Get "js/wrap-table.js" | resources.ExecuteAsTemplate (printf "%s/js/wrap-table-rendered.js" .Lang) . -}}
+{{- $copy := resources.Get "js/copy.js" | resources.ExecuteAsTemplate (printf "%s/js/copy-rendered.js" .Lang) . -}}
+{{- $lazyslzes := resources.Get "js/lazyslzes.js" | resources.ExecuteAsTemplate (printf "%s/js/lazyslzes-rendered.js" .Lang) . -}}
+{{- $console := resources.Get "js/console.js" | resources.ExecuteAsTemplate (printf "%s/js/console-rendered.js" .Lang) . -}}
+
+{{- .Scratch.Set "script" (slice $throttle) -}}
+
+{{- .Scratch.Add "script" (slice $backToTop) -}}
+{{- .Scratch.Add "script" (slice $wrapTable) -}}
+{{- .Scratch.Add "script" (slice $copy) -}}
+{{- .Scratch.Add "script" (slice $lazyslzes) -}}
+{{- .Scratch.Add "script" (slice $console) -}}
+
+{{- $path := (strings.TrimPrefix "/" (printf `%s/js/hoggo.js` .Site.LanguagePrefix)) -}}
+
+{{- if .Site.Params.enableFingerprint -}}
+    {{- $script := .Scratch.Get "script" | resources.Concat $path | resources.Minify | resources.Fingerprint -}}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{- else -}}
+    {{- $script := .Scratch.Get "script" | resources.Concat $path | resources.Minify -}}
+    <script src="{{ $script.RelPermalink }}"></script>
+{{- end }}
+
+
+{{ partial "third-party/smooth-scroll.html" . }}
+{{ partial "third-party/medium-zoom.html" . }}
+{{ partial "third-party/instant-page.html" . }}

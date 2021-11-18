@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main id="main" role="main">
+    <article role="article">
+        <h1 class="post-title">{{ .Title }}</h1>
+        <ul class="post-list">
+          {{ .Content }}
+          {{ range .Data.Terms.ByCount }}
+          <li class="field is-grouped">
+            <a href="{{ .Page.Permalink }}" class="tags has-addons are-medium">
+              <span class="tag is-info">{{ .Page.Title }}</span>
+              <span class="tag is-dark">{{ .Count }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+    </article>
+    {{ partial "pagination.html" . }}
+</main>
+{{ end }}

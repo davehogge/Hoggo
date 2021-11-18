@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+    {{ partial "head.html" . }}
+  <body>
+    <a href="#main" class="is-sr-only">Skip to main content</a>
+    {{ if not .IsHome }}{{ partial "masthead.html" . }}{{ end }}
+    {{ block "main" . }}{{ end }}
+    {{ if not .IsHome }}{{ partial "back-to-top.html" . }}{{ end }}
+    {{ partial "footer.html" . }}
+    {{ partial "scripts-footer.html" . }}
+  </body>
+</html>

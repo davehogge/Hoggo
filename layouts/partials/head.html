@@ -1,0 +1,58 @@
+<head{{ if .Site.Params.openGraph }} prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"{{ end }}>
+    <meta charset="UTF-8" /><!-- Force HTTPS Redirection -->{{- if and .Site.Params.enableForceHTTPS (eq hugo.Environment "production") }}
+        {{- $url := urls.Parse .Site.BaseURL -}}
+        {{- $host := $url.Host -}}<script>
+            if (window.location.host == "{{ $host | safeJS }}" && window.location.protocol != "https:") {
+                window.location.protocol = "https";
+            }
+        </script>{{- end }}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive Web Design -->
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" /> <!-- Avoid Automatic Format Detection -->
+    <meta http-equiv="Cache-Control" content="no-transform" /> <!-- Avoid Transcoding -->
+    {{ partial "utils/title.html" . }}
+    {{- $title := .Scratch.Get "title" -}}
+    <title>{{ $title }}</title>
+    <meta name="author" content="{{ .Params.author | default .Site.Author.name }}" />
+    {{- $description := .Description | default (partial "utils/summary.html" .) | default .Site.Params.siteDescription | plainify -}}
+    <meta name="description" content="{{ $description }}" />
+    <meta name="language" content="en"/>
+    <meta name="copyright" content="Copyright {{ .Site.Params.AuthorName }} {{ dateFormat "2006" (time .Site.Params.siteCreatedDate) }}–{{ now.Format "2006" }}, all rights reserved.">
+    <!-- Favicon, Icons, Web App -->
+    {{- $favicon := "favicon.ico" -}}
+    {{- $safariMaskIcon := "icons/safari-pinned-tab.svg" -}}
+    {{- $safariMaskColor := .Site.Params.safariMaskColor -}}
+    {{- $appleTouchIcon := "icons/apple-touch-icon.png" -}}
+    {{- partial "utils/relative-url.html" (dict "Deliver" . "filename" "") -}}
+    {{- $url := .Scratch.Get "url" -}}
+    {{- $msApplicationStartURL := $url -}}
+    {{- $msApplicationTileColor := .Site.Params.msApplicationTileColor -}}
+    {{- partial "utils/relative-url.html" (dict "Deliver" . "filename" "icons/mstile-150x150.png") -}}
+    {{- $url := .Scratch.Get "url" -}}
+    {{- $msApplicationTileImage := $url -}}
+    {{- $manifest := "manifest.json" -}}
+    <link rel="shortcut icon" href="{{ $favicon | relURL }}" type="image/x-icon" />
+    <link rel="mask-icon" href="{{ $safariMaskIcon | relURL }}" color="{{ $safariMaskColor }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouchIcon | relURL }}" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="{{ .Site.Title }}" />
+    <meta name="msapplication-starturl" content="{{ $msApplicationStartURL }}" />
+    <meta name="msapplication-TileColor" content="{{ $msApplicationTileColor }}" />
+    <meta name="msapplication-TileImage" content="{{ $msApplicationTileImage }}" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#333">
+    {{ with .Site.Params.googleSiteVerification }}<meta name="google-site-verification" content="{{ . }}" />{{ end }}
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+    {{- template "_internal/google_analytics.html" . -}} <!-- goolge analytics -->
+    {{ partial "style.html" . }} <!-- style sheets -->
+    {{- partial "scripts-head.html" . -}} <!-- header scripts -->
+    {{ with .OutputFormats.Get "SectionsAtom" -}}<link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}" /><!-- Atom / RSS -->{{ end }}
+    {{ with .OutputFormats.Get "SectionsRSS" -}}<link rel="{{ .Rel }}" type="{{ .MediaType }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}" />{{ end }}
+    <link rel="canonical" href="{{ .Permalink }}" /> <!-- SEO -->
+    {{- $Deliver := . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/schema.html" . -}}
+</head>

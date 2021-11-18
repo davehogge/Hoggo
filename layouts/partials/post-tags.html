@@ -1,0 +1,9 @@
+<section class="post-tags" role="region">
+  <h6>Find more articles like this under:</h6>
+  {{ with .Params.tags }}
+  {{ range . }}
+  {{ $href := print (absURL "tags/") (urlize .) }}
+  <a class="button" href="{{ $href }}">{{ . }}</a>
+  {{ end }}
+  {{ end }}
+</section>

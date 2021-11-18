@@ -1,0 +1,370 @@
+// Posts
+.post {
+
+  .post-hero {
+    display: block;
+    margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+
+    img {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.1);
+      margin: 20px auto 0;
+    }
+
+    figcaption {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+  }
+
+  .level {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+    box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.1);
+    max-width: 64rem;
+    margin: 0 auto 2rem;
+    padding: 0.5rem;
+
+    .level-item {
+      min-width: 25%;
+    }
+
+  }
+
+  .intro {
+    font-size: 1.3rem;
+
+    @include touch {
+  		font-size: 1.25rem;
+  	  line-height: 1.25;
+    }
+
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6{
+    color: hsl(0, 0%, 20%);
+    font-weight: 600;
+    letter-spacing: -.75px;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  h2{
+    font-size: 2.074rem;
+  }
+
+  h3 {
+    font-size: 1.728rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    line-height: 1.75;
+
+    @include touch {
+  		font-size: 1rem;
+  	  line-height: 1.7;
+    }
+
+  }
+
+  hr {
+    background: hsl(0, 0%, 88%);
+    border: none;
+    border-radius: 3px;
+    height: 3px;
+    margin: 4rem auto 4rem;
+    width: 7rem;
+
+    @include touch {
+      margin: 2rem auto 2rem;
+    }
+
+  }
+
+  blockquote {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(218, 9%, 46%);
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    padding: .75em 1.5em;
+    position: relative;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    @include touch {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    &:before {
+      background: hsl(38, 40%, 61%);
+      border-radius: 6px;
+      content: " ";
+      height: calc(100%);
+      left: 0;
+      position: absolute;
+      top: 0;
+      -moz-transition: all .3s ease-in-out;
+      -webkit-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      width: 4px;
+    }
+
+    p {
+      margin: 0;
+      max-width: inherit;
+    }
+
+    ol {
+      max-width: none;
+
+      li {
+        font-weight: 400;
+      }
+
+    }
+
+  }
+
+  table {
+    background-color: hsl(0, 0%, 100%);
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+      border-width: 0 0 1px;
+      padding: 0.5em 0.75rem;
+      vertical-align: top;
+    }
+
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+
+    li {
+      font-size: 1rem;
+      line-height: 1.75rem;
+      background-image: url('/images/icons/arrow-right.svg');
+      background-position: 0 9px;
+      background-repeat: no-repeat;
+      background-size: 12px 12px;
+      padding-left: 1.1rem;
+    }
+
+  }
+
+  ol {
+    padding-top: 0;
+  }
+
+  pre {
+		display: block;
+    background-color: hsl(0, 0%, 29%);
+    color: hsl(0, 0%, 96%);
+    margin: 0 auto 2rem auto;
+    max-width: 64rem;
+	}
+
+  code {
+    padding: 0;
+  }
+
+  iframe,
+  .s_video_simple {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+  }
+
+  // photo sets
+  .photo-set {
+    display: block;
+    margin: 80px auto 40px;
+    max-width: 1024px;
+    overflow: hidden;
+    width: 100%;
+
+    @media (max-width: 900px) {
+      margin-bottom: 20px;
+      margin-left: -16px;
+      margin-top: 40px;
+      max-width: none;
+      width: 100vw;
+    }
+
+    &-row {
+      margin-bottom: 5px;
+
+      @media (max-width: 900px) {
+        margin-bottom: 0;
+      }
+
+      &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        font-size: 0;
+        height: 0;
+        visibility: hidden;
+      }
+
+      &-item {
+        display: block;
+        float: left;
+        margin: 0 5px 0 0;
+        width: auto;
+        height: 100%;
+
+        @media (max-width: 900px) {
+          margin: 0;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        &.columns {
+          float: left;
+
+          &-12 {
+            width: calc(100% - 5px);
+
+            @media (max-width: 900px) {
+              width: 100vw;
+            }
+
+          }
+
+          &-8 {
+            width: calc(66.666% - 5px);
+
+            @media (max-width: 900px) {
+              width: 66.666vw;
+            }
+
+          }
+
+          &-6 {
+            width: calc(50% - 5px);
+
+            @media (max-width: 900px) {
+              width: 50vw;
+            }
+
+          }
+
+          &-4 {
+            width: calc(33.333% - 5px);
+
+            @media (max-width: 900px) {
+              width: 33.333vw;
+            }
+
+          }
+
+          &-4-8-split {
+            width: calc(29.95% - 5px);
+
+            @media (max-width: 900px) {
+              width: 29.95vw;
+            }
+
+          }
+
+        }
+
+        img {
+          border: none;
+          display: block;
+          margin: 0;
+          max-width: 100%
+        }
+
+        figcaption {
+          border: 0 !important;
+          clip: rect(0, 0, 0, 0) !important;
+          height: 1px !important;
+          padding: 0 !important;
+          position: absolute !important;
+          overflow: hidden !important;
+          white-space: nowrap !important;
+          width: 1px !important;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.post-metadata {
+	font-size: 1rem;
+  margin: 1.25rem auto 3.75rem;
+
+  @include touch {
+    margin: 1.25rem auto 2rem;
+  }
+
+}
+
+.meta-category {
+	font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.post-tags {
+	font-size: 1rem;
+  margin: 3.75rem auto 3.75rem;
+
+  h6 {
+    font-weight: 400;
+    margin-bottom: 0.313rem;
+    text-transform: capitalize;
+
+    @include touch {
+  		margin-left: 0;
+      margin-right: 0;
+    }
+
+  }
+
+  .button {
+    text-transform: capitalize;
+  }
+
+}

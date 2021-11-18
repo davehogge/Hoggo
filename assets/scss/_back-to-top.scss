@@ -1,0 +1,29 @@
+.back-to-top {
+    bottom: -3rem;
+    position: fixed;
+    right: 0;
+    transition: bottom 0.3s ease-in-out;
+    z-index: 1;
+
+    &.show {
+      bottom: 2rem;
+    }
+
+    a {
+      color: hsl(201, 64.9%, 62%);
+      display: block;
+      padding: 1.5rem;
+
+        &:hover {
+          color: hsl(80, 1.2%, 50%);
+        }
+
+        .icon {
+          display: inline-block;
+          height: 1em;
+          width: 1em;
+        }
+
+    }
+
+}

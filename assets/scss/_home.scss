@@ -1,0 +1,222 @@
+// home page
+main {
+
+  &.is-home {
+    padding-top: 0;
+
+    .hero-wrapper {
+      background: linear-gradient(180deg, hsla(38, 40%, 61%, 1) 0%, hsla(0, 0%, 20%, 1) 75%);
+    }
+
+    // hero section
+    .is-hero {
+      background-color: #333;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      box-shadow: inset 0 0 0 2000px rgba(0,0,0,.2);
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      animation: 1s circle-enter;
+
+      @keyframes circle-enter {
+        0% { clip-path: circle(0% at 50% 50%); }
+        100% { clip-path: circle(70.7% at 50% 50%); }
+      }
+
+      &.background-1 {
+
+        @include mobile {
+          background-image: url('/images/home/namibia-sm.jpg');
+        }
+
+        @include tablet-only {
+          background-image: url('/images/home/namibia-med.jpg');
+        }
+
+        @include desktop-only {
+          background-image: url('/images/home/namibia-lg.jpg');
+        }
+
+        @include widescreen {
+          background-image: url('/images/home/namibia-xlg.jpg');
+        }
+
+      }
+
+      h1 {
+        padding: 0 0 4.5rem 0;
+        padding-top: 20vh;
+        font-size: 7.5rem;
+        line-height: .8;
+        text-align: center;
+        font-family: 'Condiment', cursive;
+        transform: rotate(-10deg);
+        color: #fafafa;
+        z-index: 10;
+
+        @include until(667px) {
+          padding: 0 0 2rem 0;
+          padding-top: 10vh;
+          font-size: 4.5rem;
+          word-spacing: 80vw;
+        }
+
+        @include touch {
+          padding: 0 0 2rem 0;
+          padding-top: 20vh;
+          font-size: 4.5rem;
+        }
+
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        max-width: none;
+        font-weight: 400;
+        font-size: 1rem;
+        font-style: italic;
+        text-align: center;
+        color: #fafafa;
+
+          @include mobile {
+            font-size: .85rem;
+            padding: 10px 0;
+            margin: 1.5rem;
+            line-height: 1.3;
+          }
+
+          @include tablet {
+            font-size: 1rem;
+            padding: 10px;
+            white-space: nowrap;
+          }
+
+        &:before,
+        &:after {
+
+          @include tablet {
+            background-color: #a2aab3;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            vertical-align: middle;
+            width: 2.5rem;
+            margin: 0 10px;
+          }
+
+        }
+
+      }
+
+    }
+
+    .home-page-navigation {
+      margin: 10px auto;
+      text-align: center;
+      width: auto;
+
+      ul {
+        max-width: none;
+
+        @include until(667px) {
+          padding-top: 0;
+        }
+
+        li {
+          display: inline-block;
+          width: 6.5rem;
+          padding-right: 1.7rem;
+
+          @include until(667px) {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+          }
+
+          a {
+            display: inline-block;
+            padding: 0 10px;
+            line-height: 1;
+            text-align: center;
+            font-family: 'Condiment', cursive;
+            color: #fafafa;
+            transition: all .3s ease-in-out;
+            text-decoration: none;
+            font-size: 2rem;
+
+            &:hover {
+              font-size: 2.8rem;
+              margin: -1.4rem -.75rem 0 -.75rem;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .posts-link {
+      position: absolute;
+      padding-top: 16px;
+      left: 48.5vw;
+      bottom: 2.5vw;
+      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 512 512'%3E%3Cpolyline points='112 268 256 412 400 268' style='fill:none;stroke:%2380817e;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px'/%3E%3Cline x1='256' y1='392' x2='256' y2='100' style='fill:none;stroke:%2380817e;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px'/%3E%3C/svg%3E");
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      margin: 0 auto;
+      will-change: transform;
+      transition: transform 450ms;
+
+      &:hover {
+        animation: arrow-bounce 0.8s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes arrow-bounce {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(16px); }
+      }
+
+    }
+
+    // posts section
+    .post-list {
+      margin-top: 0;
+      padding-top: 60px;
+
+      &-heading {
+        color: #333;
+        font-weight: 400;
+        font-size: 1.5rem;
+
+        @include touch {
+          line-height: 1.1;
+          margin: 0;
+        }
+
+        @include desktop {
+          line-height: 1.3;
+        }
+
+      }
+
+    }
+
+    .is-more {
+      margin: 2.5rem auto 1.25rem;
+      text-align: center;
+    }
+
+  }
+
+}

@@ -1,0 +1,26 @@
+{{- if .Params.categories -}}
+<h3>
+  {{ with .Params.categories }}
+  {{ range first 1 . }}{{ . }}{{ end }}
+  {{ end }}
+</h3>
+{{- end -}}
+{{- if .Params.hero -}}
+  {{- $pathway := .File.Dir -}}
+  {{- $src := "" -}}
+  {{- $alt := "" -}}
+  {{- range first 1 .Params.hero -}}
+    {{- $src = .src -}}
+    {{- $src = (path.Join $pathway $src) | absURL -}}
+    {{- $alt = .alt -}}
+  {{- end -}}
+  <a href="{{ .Permalink }}">
+    <figure>
+      <picture>
+        <!--<source srcset="{{ $src }}.webp" type="image/webp">-->
+        <source srcset="{{ $src }}.jpg" type="image/jpeg">
+        <img src="" srcset="{{ $src }}.jpg" alt="{{ $alt }}">
+      </picture>
+    </figure>
+  </a>
+{{- end -}}

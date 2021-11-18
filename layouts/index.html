@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main class="is-home">
+
+  <div class="hero-wrapper">
+  <section id="hero" class="is-hero background-1" role="banner" aria-labelledby="homeTitle">
+
+    <h1 id="homeTitle">{{ .Site.Params.homeTitle }}</h1>
+    <h2>{{ .Site.Params.homeSubTitle }}</h2>
+
+    {{- partial "nav.html" . -}}
+
+    <a href="#main" class="posts-link"><span class="is-sr-only">On to the Posts!</span></a>
+
+  </section>
+  </div>
+
+  <section id="main" class="post-list" role="main" aria-labelledby="postListHeading">
+    <h2 id="postListHeading" class="post-list-heading">{{ .Site.Params.homePostMessage }}</h2>
+
+    {{ .Content }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 5 }}
+    {{ range (.Paginate .RegularPagesRecursive).Pages }}
+      <article>
+        {{ partial "list-thumbnail.html" . }}
+        {{ partial "list-copy.html" . }}
+      </article>
+    {{ end }}
+  </section>
+
+  <p class="is-more"><a href="/posts/" aria-label="Read More Posts" class="button" role="button"><span aria-hidden="true">View More Posts</span></a></p>
+
+</main>
+{{ end }}

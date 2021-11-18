@@ -1,0 +1,95 @@
+.post-list {
+  list-style-type: none;
+  margin: 3.75rem auto;
+
+  @include touch {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .field {
+    margin-bottom: 1rem;
+  }
+
+  article {
+    //border-bottom: 1px solid hsl(217, 21%, 81%);
+    //margin-bottom: 1.75rem;
+    //padding-bottom: 1.75rem;
+
+    &:after {
+      background: hsl(0, 0%, 88%);
+      border: none;
+      border-radius: 3px;
+      content: ' ';
+      display: block;
+      height: 3px;
+      margin: 1.75rem auto 1.75rem;
+      width: 7rem;
+    }
+
+    &:last-of-type {
+
+      &:after {
+        display: none;
+      }
+
+    }
+
+    a {
+      font-weight: 400;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+    }
+
+    h3 {
+      //color: hsl(217, 21%, 81%);
+      color: hsl(0, 0%, 62%);
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 2;
+      margin: 0;
+      text-transform: capitalize;
+    }
+
+    h2 {
+      //color: hsl(218, 55%, 39%);
+      color: hsl(38, 40%, 61%);
+      font-size: 1.875rem;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+
+      &:hover {
+  			//color: hsl(218, 55%, 59%);
+        color: hsl(37, 27%, 41%);
+  		}
+
+    }
+
+    figure {
+
+      img {
+        border-radius: 1rem;
+        box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.1);
+      }
+
+    }
+
+    p {
+      color: hsl(0, 0%, 20%);
+      font-size: 1rem;
+      margin: .5rem 0 1rem;
+    }
+
+    .post-metadata {
+      color: hsl(0, 0%, 20%);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+  }
+
+}

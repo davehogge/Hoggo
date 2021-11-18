@@ -1,0 +1,94 @@
+{{- $validFormats := slice "default" "terse" }}
+
+{{- $msg1 := "When passing a map to the internal pagination template, one of the elements must be named 'page', and it must be set to the context of the current page." }}
+{{- $msg2 := "The 'format' specified in the map passed to the internal pagination template is invalid. Valid choices are: %s." }}
+
+{{- $page := . }}
+{{- $format := "default" }}
+
+{{- if reflect.IsMap . }}
+  {{- with .page }}
+    {{- $page = . }}
+  {{- else }}
+    {{- errorf $msg1 }}
+  {{- end }}
+  {{- with .format }}
+    {{- $format = lower . }}
+  {{- end }}
+{{- end }}
+
+{{- if in $validFormats $format }}
+  {{- if gt $page.Paginator.TotalPages 1 }}
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+      <ul class="pagination-list pagination-{{ $format }}">
+        {{- partial (printf "partials/inline/pagination/%s" $format) $page }}
+      </ul>
+    </nav>
+  {{- end }}
+{{- else }}
+  {{- errorf $msg2 (delimit $validFormats ", ") }}
+{{- end -}}
+
+{{/* Format: default
+{{/* --------------------------------------------------------------------- */}}
+{{- define "partials/inline/pagination/default" }}
+  {{- with .Paginator }}
+    {{- $currentPageNumber := .PageNumber }}
+
+    {{- with .Prev }}
+      <li>
+        <a href="{{ .URL }}" aria-label="Previous" class="pagination-link" role="button"><span aria-hidden="true">Previous</span></a>
+      </li>
+    {{- else }}
+      <li>
+        <a href="#" aria-disabled="true" aria-label="Previous" class="pagination-link is-disabled" role="button" tabindex="-1"><span aria-hidden="true">Previous</span></a>
+      </li>
+    {{- end }}
+
+    {{- $slots := 5 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+      {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- with .Next }}
+      <li>
+        <a href="{{ .URL }}" aria-label="Next" class="pagination-next" role="button"><span aria-hidden="true">Next page</span></a>
+      </li>
+    {{- else }}
+      <li>
+        <a href="#" aria-disabled="true" aria-label="Next" class="pagination-next is-disabled" role="button" tabindex="-1"><span aria-hidden="true">Next page</span></a>
+      </li>
+    {{- end }}
+
+  {{- end }}
+{{- end -}}
+
+{{/* Format: terse
+{{/* --------------------------------------------------------------------- */}}
+{{- define "partials/inline/pagination/terse" }}
+  {{- with .Paginator }}
+    {{- $currentPageNumber := .PageNumber }}
+
+    {{- with .Prev }}
+      <li>
+        <a href="{{ .URL }}" aria-label="Previous" class="pagination-link" role="button"><span aria-hidden="true">Previous</span></a>
+      </li>
+    {{- end }}
+
+    {{- $slots := 3 }}
+    {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+    {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+    {{- if lt (add (sub $end $start) 1) $slots }}
+      {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+    {{- end }}
+
+    {{- with .Next }}
+      <li>
+        <a href="{{ .URL }}" aria-label="Next" class="pagination-next" role="button"><span aria-hidden="true">Next page</span></a>
+      </li>
+    {{- end }}
+
+  {{- end }}
+{{- end -}}

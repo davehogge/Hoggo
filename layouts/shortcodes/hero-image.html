@@ -1,0 +1,82 @@
+{{/* get file that matches the filename as specified as src="" in shortcode */}}
+{{ $src := .Page.Resources.GetMatch (printf "*%s*" (.Get "src")) }}
+{{ $orientation := (.Get "orientation") }}
+
+{{/* set image sizes, these are hardcoded for now, x dictates that images are resized to this width */}}
+
+{{/* image orientation is landscape (EXIF orientation value 1) */}}
+{{ $tinyw := default "500x q50 webp photo" }}
+{{ $smallw := default "800x q60 webp photo" }}
+{{ $mediumw := default "1200x q70 webp photo" }}
+{{ $largew := default "1500x q80 webp photo" }}
+{{ $jpgw := default "1500x q80" }}
+
+{{/* image orientation is portrait (EXIF orientation value 8) */}}
+{{ $tinywp := default "500x r270 q50 webp photo" }}
+{{ $smallwp := default "800x r270 q60 webp photo" }}
+{{ $mediumwp := default "1200x r270 q70 webp photo" }}
+{{ $largewp := default "1500x r270 q80 webp photo" }}
+{{ $jpgwp := default "1500x r270 q80" }}
+
+{{/* image orientation is portrait (EXIF orientation value 6) */}}
+{{ $tinywp2 := default "500x r90 q50 webp photo" }}
+{{ $smallwp2 := default "800x r90 q60 webp photo" }}
+{{ $mediumwp2 := default "1200x r90 q70 webp photo" }}
+{{ $largewp2 := default "1500x r90 q80 webp photo" }}
+{{ $jpgwp2 := default "1500x r90 q80" }}
+
+{{/* resize the src image to the given sizes */}}
+{{ if eq $orientation "portrait"}}
+  {{ .Scratch.Set "tiny" ($src.Resize $tinywp) }}
+  {{ .Scratch.Set "small" ($src.Resize $smallwp) }}
+  {{ .Scratch.Set "medium" ($src.Resize $mediumwp) }}
+  {{ .Scratch.Set "large" ($src.Resize $largewp) }}
+  {{ .Scratch.Set "jpg" ($src.Resize $jpgwp) }}
+{{ else if eq $orientation "portrait2"}}
+  {{ .Scratch.Set "tiny" ($src.Resize $tinywp2) }}
+  {{ .Scratch.Set "small" ($src.Resize $smallwp2) }}
+  {{ .Scratch.Set "medium" ($src.Resize $mediumwp2) }}
+  {{ .Scratch.Set "large" ($src.Resize $largewp2) }}
+{{ .Scratch.Set "jpg" ($src.Resize $jpgwp2) }}
+{{ else }}
+  {{ .Scratch.Set "tiny" ($src.Resize $tinyw) }}
+  {{ .Scratch.Set "small" ($src.Resize $smallw) }}
+  {{ .Scratch.Set "medium" ($src.Resize $mediumw) }}
+  {{ .Scratch.Set "large" ($src.Resize $largew) }}
+  {{ .Scratch.Set "jpg" ($src.Resize $jpgw) }}
+{{ end }}
+
+{{/* add the processed images to the scratch */}}
+{{ $tiny := .Scratch.Get "tiny" }}
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+{{ $jpg := .Scratch.Get "jpg" }}
+
+{{/* only use images smaller than or equal to the src (original) image size, as Hugo will upscale small images */}}
+{{/* set the sizes attribute to (min-width: 35em) 1200px, 100vw unless overridden in shortcode */}}
+<!-- figure -->
+<figure class="post-hero">
+      <picture>
+          <source
+            srcset='{{ if ge $src.Width "500" }}{{ with $tiny.RelPermalink }}{{.}} 500w{{ end }}{{ end }}
+            {{ if ge $src.Width "800" }}{{ with $small.RelPermalink }}, {{.}} 800w{{ end }}{{ end }}
+            {{ if ge $src.Width "1200" }}{{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}{{ end }}
+            {{ if ge $src.Width "1500" }}{{ with $large.RelPermalink }}, {{.}} 1500w {{ end }}{{ end }}'
+            {{ with .Get "sizes" }}sizes='{{.}}'{{ else }}sizes="(min-width: 35em) 1200px, 100vw"{{ end }}
+            type="image/webp"
+          >
+          <source
+            srcset="{{ $jpg.RelPermalink }}"
+            {{ with .Get "sizes" }}sizes='{{.}}'{{ else }}sizes="(min-width: 35em) 1200px, 100vw"{{ end }}
+            type="image/jpeg"
+          >
+          <img
+            src="{{ $jpg.RelPermalink }}"
+            {{ with .Get "title" }}alt="{{.}}"{{ else }}alt=""{{ end }}
+            {{ with .Get "title" }}title="{{.}}"{{ end }}
+          >
+      </picture>
+      {{ with .Get "title" }}<figcaption>{{.}}</figcaption>{{ end }}
+</figure>
+<!-- /figure -->

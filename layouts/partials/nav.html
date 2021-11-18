@@ -1,0 +1,14 @@
+{{ if .IsHome }}
+  <nav class="home-page-navigation" role="navigation" aria-label="main navigation">
+{{ else }}
+  <nav id="masthead-navigation" class="masthead-navigation" role="navigation" aria-label="main navigation">
+{{ end }}
+    <ul class="menu">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <li class='menu-item'>
+        <a title="{{ .Name }}" href="{{ .URL }}" class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}is-active{{end}}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+</nav>
