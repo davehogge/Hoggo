@@ -10,7 +10,7 @@ main {
 
     // hero section
     .is-hero {
-      background-color: #333;
+      background-color: hsl(0, 0%, 20%);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -54,7 +54,7 @@ main {
         text-align: center;
         font-family: 'Condiment', cursive;
         transform: rotate(-10deg);
-        color: #fafafa;
+        color: hsl(0, 0%, 98%);
         z-index: 10;
 
         @include until(667px) {
@@ -80,7 +80,7 @@ main {
         font-size: 1rem;
         font-style: italic;
         text-align: center;
-        color: #fafafa;
+        color: hsl(0, 0%, 98%);
 
           @include mobile {
             font-size: .85rem;
@@ -99,7 +99,7 @@ main {
         &:after {
 
           @include tablet {
-            background-color: #a2aab3;
+            background-color: hsl(212, 10%, 67%);
             content: "";
             display: inline-block;
             height: 1px;
@@ -142,7 +142,7 @@ main {
             line-height: 1;
             text-align: center;
             font-family: 'Condiment', cursive;
-            color: #fafafa;
+            color: hsl(0, 0%, 98%);
             transition: all .3s ease-in-out;
             text-decoration: none;
             font-size: 2rem;
@@ -195,7 +195,7 @@ main {
       padding-top: 60px;
 
       &-heading {
-        color: #333;
+        color: hsl(0, 0%, 20%);
         font-weight: 400;
         font-size: 1.5rem;
 

@@ -12,9 +12,6 @@
   }
 
   article {
-    //border-bottom: 1px solid hsl(217, 21%, 81%);
-    //margin-bottom: 1.75rem;
-    //padding-bottom: 1.75rem;
 
     &:after {
       background: hsl(0, 0%, 88%);
@@ -45,7 +42,6 @@
     }
 
     h3 {
-      //color: hsl(217, 21%, 81%);
       color: hsl(0, 0%, 62%);
       font-size: 0.95rem;
       font-weight: 600;
@@ -55,7 +51,6 @@
     }
 
     h2 {
-      //color: hsl(218, 55%, 39%);
       color: hsl(38, 40%, 61%);
       font-size: 1.875rem;
       line-height: 1;
@@ -63,7 +58,6 @@
       padding: 0;
 
       &:hover {
-  			//color: hsl(218, 55%, 59%);
         color: hsl(37, 27%, 41%);
   		}
 

@@ -23,11 +23,11 @@
 
     //sections
     .panel {
-      background-color: #f5f5f5;
+      background-color: hsl(0, 0%, 96%);
       transition: background-color 1000ms linear;
 
       &:hover {
-        background-color: #cfd8dc;
+        background-color: hsl(198, 16%, 84%);
         transition: background-color 1000ms linear;
         transition-delay: 300ms;
       }
@@ -149,8 +149,6 @@
       }
 
       &.qualifications {
-        //padding: 2.5rem 6rem;
-        //min-height: calc(100vh - 53px);
 
         ul {
           list-style-type: none;
@@ -179,25 +177,6 @@
 
       }
 
-      //&.skills {
-
-      //}
-
-      //&.portfolio {
-        //padding: 2.5rem 6rem;
-        //min-height: calc(100vh - 53px);
-      //}
-
-      //&.career {
-        //padding: 2.5rem 6rem;
-        //min-height: calc(100vh - 53px);
-      //}
-
-      //&.education {
-        //padding: 2.5rem 6rem;
-        //min-height: calc(100vh - 53px);
-      //}
-
       // portfolio items
       .portfolio-item {
         background: hsl(0, 0%, 100%);
@@ -218,7 +197,6 @@
         }
 
         &:hover {
-          //box-shadow: 5px 10px #333;
           box-shadow: 0.13rem 0.13rem rgba(0,0,0,0.5);
 
           .portfolio-item-graphic {
@@ -236,8 +214,6 @@
           overflow: hidden;
           position: relative;
           z-index: 0;
-          //transition: 0.5s ease all;
-          //transition-delay: 300ms;
 
           &:hover {
             background: linear-gradient(-60deg, #e79d00 100%, #fedf03 100%);
@@ -302,7 +278,7 @@
 
           &:hover {
             animation: gradient 25s ease infinite;
-            background-color: #eee;
+            background-color: hsl(0, 0%, 93%);
             background-image: repeating-linear-gradient(-45deg, #D40119 0 200px, #C60008 20px 400px);
             background-size: 200% 200%;
           }
@@ -327,7 +303,7 @@
           z-index: 0;
 
           &:hover {
-            background: #008392;
+            background: hsl(186, 100%, 29%);
             background-blend-mode: color-burn;
 
             .shape-1 {

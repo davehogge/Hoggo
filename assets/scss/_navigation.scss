@@ -32,16 +32,13 @@
 
 				&.is-active,
 				&:hover {
-					//color: hsl(218, 55%, 39%);
 					color: hsl(38, 40%, 61%);
 				}
 
 				&:hover {
 
 					&:before {
-						//background-color: hsl(218, 55%, 39%);
 						background-color: hsl(38, 40%, 61%);
-						//left: -.7rem;
 						left: -.2rem;
 						-webkit-transform: scaleX(1);
 						-ms-transform: scaleX(1);
@@ -58,12 +55,10 @@
 					position: absolute;
 					width: 100%;
 					height: 0.065rem;
-					//bottom: -1.1rem;
 					bottom: -1rem;
 					padding: 0 .2rem;
 					left: 0;
 					z-index: -1;
-					//background-color: hsl(218, 55%, 39%);
 					background-color: hsl(38, 40%, 61%);
 					visibility: hidden;
 					-webkit-transform: scaleX(0);
