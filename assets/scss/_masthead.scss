@@ -1,76 +1,76 @@
 // Masthead
 .masthead {
-	background: hsl(0, 0%, 99.6%);
-  border-bottom: 0.065rem solid hsl(0, 0%, 94%);
-	box-shadow: 0 0.13rem 0.13rem rgba(0, 0, 0, .05);
-	color: hsl(240, 7%, 40%);
-	font-size: 1rem;
-  margin: 0 auto;
-  max-height: 3.313rem;
-	padding: 0.75rem 0 0.25rem 0;
-  position: fixed;
-	transition: all .4s ease-in-out;
-	width: 100%;
-	z-index: 100;
-
-  @include touch {
-    text-align: center;
-    max-height: none;
-  }
-
-  &:after {
-  	clear: both;
-  	content: ".";
-  	display: block;
-  	font-size: 0;
-  	height: 0;
-  	visibility: hidden;
-  }
-
-  .branding {
-  	float: left;
-  	margin: 0;
-  	padding-left: 1.5rem;
+    background: hsl(0, 0%, 99.6%);
+    border-bottom: 0.065rem solid hsl(0, 0%, 94%);
+    box-shadow: 0 0.13rem 0.13rem rgba(0, 0, 0, .05);
+    color: hsl(240, 7%, 40%);
+    font-size: 1rem;
+    margin: 0 auto;
+    max-height: 3.313rem;
+    padding: 0.75rem 0 0.25rem 0;
+    position: fixed;
+    transition: all .4s ease-in-out;
+    width: 100%;
+    z-index: 100;
 
     @include touch {
-  		display: block;
-  		float: none;
-  		padding-left: 0;
-      text-align: center;
-  		width: auto;
+        text-align: center;
+        max-height: none;
     }
 
-    h1 {
-    	font-family: Condiment;
-      font-style: normal;
-      font-size: 2rem;
-    	font-weight: 600;
-      letter-spacing: 0;
-    	line-height: 1.1;
-    	margin: 0.438rem 0 0 0;
-    	position: relative;
-      text-rendering: optimizeLegibility;
-    	text-transform: capitalize;
-    	-webkit-transform: rotate(-2deg);
-    	-ms-transform: rotate(-2deg);
-    	transform: rotate(-2deg);
+    &:after {
+        clear: both;
+        content: ".";
+        display: block;
+        font-size: 0;
+        height: 0;
+        visibility: hidden;
+    }
 
-      a {
-        color: hsl(312, 3%, 66%);
-      	cursor: pointer;
-      	font-weight: 600;
-        text-decoration: none;
+    .branding {
+        float: left;
+        margin: 0;
+        padding-left: 1.5rem;
 
-        &:hover {
-					color: hsl(38, 40%, 61%);
-          font-size: 2.5rem;
-        	transition: all .3s ease-in-out;
+        @include touch {
+            display: block;
+            float: none;
+            padding-left: 0;
+            text-align: center;
+            width: auto;
         }
 
-      }
+        h1 {
+            font-family: Condiment;
+            font-style: normal;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0;
+            line-height: 1.1;
+            margin: 0.438rem 0 0 0;
+            position: relative;
+            text-rendering: optimizeLegibility;
+            text-transform: capitalize;
+            -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+
+            a {
+                color: hsl(312, 3%, 66%);
+                cursor: pointer;
+                font-weight: 600;
+                text-decoration: none;
+
+                &:hover {
+                    color: hsl(38, 40%, 61%);
+                    font-size: 2.5rem;
+                    transition: all .3s ease-in-out;
+                }
+
+            }
+
+        }
 
     }
-
-  }
 
 }

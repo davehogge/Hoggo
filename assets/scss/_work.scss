@@ -1,485 +1,471 @@
 // work page
 .post {
 
-  &.is-work {
+    &.is-work {
 
-    .opening {
+        .opening {
 
-      @include desktop {
-        padding: 2.5rem 6rem;
-        min-height: calc(100vh - 53px);
-      }
+            @include desktop {
+                padding: 2.5rem 6rem;
+                min-height: calc(100vh - 53px);
+            }
 
-      .button {
+            .button {
 
-        @include touch {
-          display: inline-block;
-          margin-bottom: 0.5rem;
-        }
+                @include touch {
+                    display: inline-block;
+                    margin-bottom: 0.5rem;
+                }
 
-      }
-
-    }
-
-    //sections
-    .panel {
-      background-color: hsl(0, 0%, 96%);
-      transition: background-color 1000ms linear;
-
-      &:hover {
-        background-color: hsl(198, 16%, 84%);
-        transition: background-color 1000ms linear;
-        transition-delay: 300ms;
-      }
-
-      section {
-
-        &:after {
-          background: hsl(0, 0%, 88%);
-          border: none;
-          border-radius: 3px;
-          content: ' ';
-          display: block;
-          height: 3px;
-          margin: 1.75rem auto 1.75rem;
-          width: 7rem;
-        }
-
-        &:last-of-type {
-
-          &:after {
-            display: none;
-          }
+            }
 
         }
 
-      }
+        //sections
+        .panel {
+            background-color: hsl(0, 0%, 96%);
+            transition: background-color 1000ms linear;
 
-      h2 {
+            &:hover {
+                background-color: hsl(198, 16%, 84%);
+                transition: background-color 1000ms linear;
+                transition-delay: 300ms;
+            }
 
-        @include touch {
-          font-size: 2.5rem;
-          font-weight: 900;
-          margin-bottom: 1.5rem;
+            section {
+
+                &:after {
+                    background: hsl(0, 0%, 88%);
+                    border: none;
+                    border-radius: 3px;
+                    content: ' ';
+                    display: block;
+                    height: 3px;
+                    margin: 1.75rem auto 1.75rem;
+                    width: 7rem;
+                }
+
+                &:last-of-type {
+
+                    &:after {
+                        display: none;
+                    }
+
+                }
+
+            }
+
+            h2 {
+
+                @include touch {
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    margin-bottom: 1.5rem;
+                }
+
+                @include desktop {
+                    font-size: 3rem;
+                    font-weight: 900;
+                    margin-bottom: 3.5rem;
+                }
+
+            }
+
+            .intro {
+
+                @include touch {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    margin-bottom: 1.75rem;
+                }
+
+                @include desktop {
+                    font-size: 1.2rem;
+                    line-height: 1.75;
+                    margin-bottom: 3.5rem;
+                }
+
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+
+            aside {
+                font-size: 0.9rem;
+                font-weight: 600;
+                line-height: 1.5rem;
+            }
+
+            p {
+                margin-bottom: 0.5rem;
+
+                @include touch {
+                    font-size: 0.9rem;
+                    line-height: 1.25rem;
+                }
+
+                @include desktop {
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                }
+
+            }
+
+            ul {
+                list-style-type: none;
+                margin-bottom: 0;
+                margin-top: 0;
+                padding: 0;
+
+                li {
+                    font-size: 1rem;
+                    line-height: 1.75rem;
+                    background-image: url('/images/icons/arrow-right.svg');
+                    background-position: 0 9px;
+                    background-repeat: no-repeat;
+                    background-size: 12px 12px;
+                    padding-left: 1.1rem;
+                }
+
+            }
+
+            &.qualifications,
+            &.skills,
+            &.portfolio,
+            &.career,
+            &.education {
+
+                @include touch {
+                    padding-top: 1.5rem;
+                }
+
+                @include desktop {
+                    padding: 2.5rem 6rem;
+                    min-height: calc(100vh - 53px);
+                }
+
+            }
+
+            &.qualifications {
+
+                ul {
+                    list-style-type: none;
+                    padding-left: 0;
+
+                    li {
+                        background-position: 0 3px;
+                        background-size: 20px 20px;
+                        padding-left: 2rem;
+
+                        @include touch {
+                            font-size: 1.0rem;
+                            line-height: 1.3rem;
+                            padding-bottom: 1rem;
+                        }
+
+                        @include desktop {
+                            font-size: 1.2rem;
+                            line-height: 1.5rem;
+                            padding-bottom: 2rem;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            // portfolio items
+            .portfolio-item {
+                background: hsl(0, 0%, 100%);
+                border-radius: 32px;
+                box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.05);
+                line-height: 1;
+
+                @include touch {
+                    margin: 0 1rem 4rem;
+                    padding: 2rem 1rem 1rem;
+                }
+
+                @include desktop {
+                    max-width: 64rem;
+                    display: flex;
+                    margin: 0 auto 8rem;
+                    padding: 2rem 0  2.5rem  1rem;
+                }
+
+                &:hover {
+                    box-shadow: 0.13rem 0.13rem rgba(0,0,0,0.5);
+
+                    .portfolio-item-graphic {
+
+                        img {
+                            transform: scale(1.075);
+                        }
+
+                    }
+
+                }
+
+                //transition one
+                &.transition-1 {
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 0;
+
+                    &:hover {
+                        background: linear-gradient(60deg, #e79d00 100%, #fedf03 100%);
+
+                        .shape-1 {
+                            animation: slide 3s ease-in-out infinite alternate;
+                            background-image: linear-gradient(-60deg, #e79d00 50%, #fedf03 50%);
+                            bottom: 0;
+                            height: 100%;
+                            left: -50%;
+                            opacity: 0.5;
+                            position: absolute;
+                            right: -50%;
+                            top: 0;
+                            z-index: -3;
+                        }
+
+                        .shape-2 {
+                            animation: slide 4s ease-in-out infinite alternate;
+                            background-image: linear-gradient(-60deg, #e79d00 30%, #fedf03 30%);
+                            bottom: 0;
+                            height: 100%;
+                            left: -50%;
+                            opacity: 0.5;
+                            position: absolute;
+                            right: -50%;
+                            top: 0;
+                            z-index: -2;
+                        }
+
+                        .shape-3 {
+                            animation: slide 5s ease-in-out infinite alternate;
+                            background-image: linear-gradient(-60deg, #e79d00 15%, #fedf03 15%);
+                            bottom: 0;
+                            height: 100%;
+                            left: -50%;
+                            opacity: 0.5;
+                            position: absolute;
+                            right: -50%;
+                            top: 0;
+                            z-index: -1;
+                        }
+
+                        @keyframes slide {
+
+                            0% { transform: translateX(-25%); }
+
+                            100% { transform: translateX(25%); }
+
+                        }
+
+                    }
+
+                }
+
+                //transition two
+                &.transition-2 {
+
+                    &:hover {
+                        animation: gradient 25s ease infinite;
+                        background-color: hsl(0, 0%, 93%);
+                        background-image: repeating-linear-gradient(-45deg, #D40119 0 200px, #C60008 20px 400px);
+                        background-size: 200% 200%;
+                    }
+
+                }
+
+                //transition three
+                &.transition-3 {
+
+                    &:hover {
+                        animation: gradient 10s ease infinite;
+                        background-image: radial-gradient(at 0% 30%, #ffc42c 10px, #ffc42c 30%, rgb(67, 190, 172) 50%);
+                        background-size: 200% 200%;
+                    }
+
+                }
+
+                //transition four
+                &.transition-4 {
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 0;
+
+                    &:hover {
+                        background: hsl(186, 100%, 29%);
+                        background-blend-mode: color-burn;
+
+                        .shape-1 {
+                            animation: slide 3s ease-in-out infinite alternate;
+                            background-image: conic-gradient( from 145deg, #705fa5 0, #705fa5 20%, transparent 20%);
+                            bottom: 0;
+                            height: 100%;
+                            left: -50%;
+                            opacity: 0.5;
+                            position: absolute;
+                            right: -50%;
+                            top: 0;
+                            z-index: -3;
+                        }
+
+                        .shape-2 {
+                            animation: slide 4s ease-in-out infinite alternate;
+                            background: conic-gradient( from 145deg, #705fa5 0, #705fa5 20%, transparent 20%);
+                            bottom: 0;
+                            height: 100%;
+                            left: -30%;
+                            opacity: 0.5;
+                            position: absolute;
+                            right: -30%;
+                            top: 0;
+                            z-index: -2;
+                        }
+
+                        .shape-3 {
+                            animation: slide 5s ease-in-out infinite alternate;
+                            background: conic-gradient( from 145deg, #705fa5 0, #705fa5 20%, transparent 20%);
+                            bottom: 0;
+                            height: 100%;
+                            left: -15%;
+                            opacity: 0.5;
+                            position: absolute;
+                            right: -15%;
+                            top: 0;
+                            z-index: -1;
+                        }
+
+                        @keyframes slide {
+
+                            0% { transform: translateX(-25%); }
+
+                            100% { transform: translateX(25%); }
+
+                        }
+
+                    }
+
+                }
+
+                //transition five
+                &.transition-5 {
+
+                    &:hover {
+                        animation: gradient 12s ease infinite;
+                        background: linear-gradient(to top right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+                        background-size: 400% 400%;
+                    }
+
+                    @keyframes gradient {
+
+                        0% { background-position: 0% 50%; }
+
+                        50% { background-position: 100% 50%; }
+
+                        100% { background-position: 0% 50%; }
+
+                    }
+
+                }
+
+                // portfolio item copy
+                &-copy {
+
+                    @include desktop {
+                        display: inline-block;
+                        margin-left: 1.5rem;
+                        max-width: 20.5rem;
+                    }
+
+                }
+
+                &-heading {
+                    font-weight: 600;
+                    line-height: 0.9;
+
+                    @include touch {
+                        font-size: 1.8rem;
+                        margin: 0.5rem 0;
+                    }
+
+                    @include desktop {
+                        font-size: 2.2rem;
+                        margin: 0 0 0.5rem;
+                    }
+
+                }
+
+                &-meta {
+                    font-size: 0.95rem;
+                    font-weight: 400;
+                    margin: 0 0 0.5rem;
+
+                    em {
+                        display: block;
+                    }
+
+                }
+
+                &-details {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    margin: 0 0 0.5rem;
+                }
+
+                &-graphic {
+                    font-size: 0.01rem;
+
+                    @include desktop {
+                        display: inline-block;
+                        max-width: 39rem;
+                    }
+
+                    img {
+                        transition: all 3s ease-out;
+                    }
+
+                }
+
+                &-link {
+
+                    @include touch {
+                        display: inline-block;
+                        margin-top: 0.5rem;
+                        width: 100%;
+                    }
+
+                    @include desktop {
+                        float: right;
+                    }
+
+                }
+
+            }
+
         }
 
-        @include desktop {
-          font-size: 3rem;
-          font-weight: 900;
-          margin-bottom: 3.5rem;
-        }
-
-      }
-
-      .intro {
-
-        @include touch {
-          font-size: 1rem;
-          line-height: 1.5;
-          margin-bottom: 1.75rem;
-        }
-
-        @include desktop {
-          font-size: 1.2rem;
-          line-height: 1.75;
-          margin-bottom: 3.5rem;
-        }
-
-      }
-
-      h3 {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-      }
-
-      aside {
-        font-size: 0.9rem;
-        font-weight: 600;
-        line-height: 1.5rem;
-      }
-
-      p {
-        margin-bottom: 0.5rem;
-
-        @include touch {
-          font-size: 0.9rem;
-          line-height: 1.25rem;
-        }
-
-        @include desktop {
-          font-size: 1rem;
-          line-height: 1.5rem;
-        }
-
-      }
-
-      ul {
-        list-style-type: none;
-        margin-bottom: 0;
-        margin-top: 0;
-        padding: 0;
-
-        li {
-          font-size: 1rem;
-          line-height: 1.75rem;
-          background-image: url('/images/icons/arrow-right.svg');
-          background-position: 0 9px;
-          background-repeat: no-repeat;
-          background-size: 12px 12px;
-          padding-left: 1.1rem;
-        }
-
-      }
-
-      &.qualifications,
-      &.skills,
-      &.portfolio,
-      &.career,
-      &.education {
-
-        @include touch {
-          padding-top: 1.5rem;
-        }
-
-        @include desktop {
-          padding: 2.5rem 6rem;
-          min-height: calc(100vh - 53px);
-        }
-
-      }
-
-      &.qualifications {
-
-        ul {
-          list-style-type: none;
-          padding-left: 0;
-
-          li {
-            background-position: 0 3px;
-            background-size: 20px 20px;
-            padding-left: 2rem;
+        .closing {
 
             @include touch {
-              font-size: 1.0rem;
-              line-height: 1.3rem;
-              padding-bottom: 1rem;
+                padding: 2.5rem 0 0;
             }
 
             @include desktop {
-              font-size: 1.2rem;
-              line-height: 1.5rem;
-              padding-bottom: 2rem;
+                padding: 2.5rem 6rem;
             }
 
-          }
-
-        }
-
-      }
-
-      // portfolio items
-      .portfolio-item {
-        background: hsl(0, 0%, 100%);
-        border-radius: 32px;
-        box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.05);
-        line-height: 1;
-
-        @include touch {
-          margin: 0 1rem 4rem;
-          padding: 2rem 1rem 1rem;
-        }
-
-        @include desktop {
-          max-width: 64rem;
-          display: flex;
-          margin: 0 auto 8rem;
-          padding: 2rem 0  2.5rem  1rem;
-        }
-
-        &:hover {
-          box-shadow: 0.13rem 0.13rem rgba(0,0,0,0.5);
-
-          .portfolio-item-graphic {
-
-            img {
-              transform: scale(1.075);
-            }
-
-          }
-
-        }
-
-        //transition one
-        &.transition-1 {
-          overflow: hidden;
-          position: relative;
-          z-index: 0;
-
-          &:hover {
-            background: linear-gradient(-60deg, #e79d00 100%, #fedf03 100%);
-
-            .shape-1 {
-              animation: slide 3s ease-in-out infinite alternate;
-              background-image: linear-gradient(-60deg, #e79d00 50%, #fedf03 50%);
-              bottom: 0;
-              height: 100%;
-              left: -50%;
-              opacity: 0.5;
-              position: absolute;
-              right: -50%;
-              top: 0;
-              z-index: -3;
-            }
-
-            .shape-2 {
-              animation: slide 4s ease-in-out infinite alternate;
-              background-image: linear-gradient(-60deg, #e79d00 30%, #fedf03 30%);
-              bottom: 0;
-              height: 100%;
-              left: -50%;
-              opacity: 0.5;
-              position: absolute;
-              right: -50%;
-              top: 0;
-              z-index: -2;
-            }
-
-            .shape-3 {
-              animation: slide 5s ease-in-out infinite alternate;
-              background-image: linear-gradient(-60deg, #e79d00 15%, #fedf03 15%);
-              bottom: 0;
-              height: 100%;
-              left: -50%;
-              opacity: 0.5;
-              position: absolute;
-              right: -50%;
-              top: 0;
-              z-index: -1;
-            }
-
-            @keyframes slide {
-
-              0% {
-                transform: translateX(-25%);
-              }
-
-              100% {
-                transform: translateX(25%);
-              }
-
-            }
-
-          }
-
-        }
-
-        //transition two
-        &.transition-2 {
-
-          &:hover {
-            animation: gradient 25s ease infinite;
-            background-color: hsl(0, 0%, 93%);
-            background-image: repeating-linear-gradient(-45deg, #D40119 0 200px, #C60008 20px 400px);
-            background-size: 200% 200%;
-          }
-
-        }
-
-        //transition three
-        &.transition-3 {
-
-          &:hover {
-            animation: gradient 10s ease infinite;
-            background-image: radial-gradient(at 0% 30%, #ffc42c 10px, #ffc42c 30%, rgb(67, 190, 172) 50%);
-            background-size: 200% 200%;
-          }
-
-        }
-
-        //transition four
-        &.transition-4 {
-          overflow: hidden;
-          position: relative;
-          z-index: 0;
-
-          &:hover {
-            background: hsl(186, 100%, 29%);
-            background-blend-mode: color-burn;
-
-            .shape-1 {
-              animation: slide 3s ease-in-out infinite alternate;
-              background-image: conic-gradient( from 145deg, #705fa5 0, #705fa5 20%, transparent 20%);
-              bottom: 0;
-              height: 100%;
-              left: -50%;
-              opacity: 0.5;
-              position: absolute;
-              right: -50%;
-              top: 0;
-              z-index: -3;
-            }
-
-            .shape-2 {
-              animation: slide 4s ease-in-out infinite alternate;
-              background: conic-gradient( from 145deg, #705fa5 0, #705fa5 20%, transparent 20%);
-              bottom: 0;
-              height: 100%;
-              left: -30%;
-              opacity: 0.5;
-              position: absolute;
-              right: -30%;
-              top: 0;
-              z-index: -2;
-            }
-
-            .shape-3 {
-              animation: slide 5s ease-in-out infinite alternate;
-              background: conic-gradient( from 145deg, #705fa5 0, #705fa5 20%, transparent 20%);
-              bottom: 0;
-              height: 100%;
-              left: -15%;
-              opacity: 0.5;
-              position: absolute;
-              right: -15%;
-              top: 0;
-              z-index: -1;
-            }
-
-            @keyframes slide {
-
-              0% {
-                transform: translateX(-25%);
-              }
-
-              100% {
-                transform: translateX(25%);
-              }
-
-            }
-
-          }
-
-        }
-
-        //transition five
-        &.transition-5 {
-
-          &:hover {
-            animation: gradient 12s ease infinite;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-          }
-
-          @keyframes gradient {
-
-              0% {
-                  background-position: 0% 50%;
-              }
-
-              50% {
-                  background-position: 100% 50%;
-              }
-
-              100% {
-                  background-position: 0% 50%;
-              }
-
+            p {
+                margin-bottom: 0;
             }
 
         }
-
-        // portfolio item copy
-        &-copy {
-
-          @include desktop {
-            display: inline-block;
-            margin-left: 1.5rem;
-            max-width: 20.5rem;
-          }
-
-        }
-
-        &-heading {
-          font-weight: 600;
-          line-height: 0.9;
-
-          @include touch {
-            font-size: 1.8rem;
-            margin: 0.5rem 0;
-          }
-
-          @include desktop {
-            font-size: 2.2rem;
-            margin: 0 0 0.5rem;
-          }
-
-        }
-
-        &-meta {
-          font-size: 0.95rem;
-          font-weight: 400;
-          margin: 0 0 0.5rem;
-
-          em {
-            display: block;
-          }
-
-        }
-
-        &-details {
-          font-size: 1rem;
-          font-weight: 400;
-          margin: 0 0 0.5rem;
-        }
-
-        &-graphic {
-          font-size: 0.01rem;
-
-          @include desktop {
-            display: inline-block;
-            max-width: 39rem;
-          }
-
-          img {
-            transition: all 3s ease-out;
-          }
-
-        }
-
-        &-link {
-
-          @include touch {
-            display: inline-block;
-            margin-top: 0.5rem;
-            width: 100%;
-          }
-
-          @include desktop {
-            float: right;
-          }
-
-        }
-
-      }
 
     }
-
-    .closing {
-
-      @include touch {
-        padding: 2.5rem 0 0;
-      }
-
-      @include desktop {
-        padding: 2.5rem 6rem;
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-
-    }
-
-  }
 
 }

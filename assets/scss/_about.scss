@@ -1,100 +1,100 @@
 // about page
 .feature-area {
-  align-items: center;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 32px;
-  box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.05);
-  margin-bottom: 1.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 64rem;
-  overflow: hidden;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 32px;
+    box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 64rem;
+    overflow: hidden;
 
-  @include touch {
-    margin: 1rem 1rem 1.5rem;
-  }
-
-  @include desktop {
-    display: flex;
-    margin-top: 1rem;
-  }
-
-  .feature-photo {
-    line-height: 0;
-
-    @include desktop {
-      margin-right: 1rem;
-      max-width: 43rem;
-
-
-      img {
-        clip-path: circle(80%);
-        transition: clip-path 1s;
-      }
-
-      &:hover {
-        filter: drop-shadow(.4rem .4rem .4rem rgba(0,0,0,0.6));
-
-        img {
-          clip-path: circle(32%);
-        }
-
-      }
-
+    @include touch {
+        margin: 1rem 1rem 1.5rem;
     }
 
-  }
-
-  .feature-copy {
-
     @include desktop {
-      width: 20rem;
+        display: flex;
+        margin-top: 1rem;
     }
 
-    p {
-
-      &.intro {
-
-        @include touch {
-          padding: 1rem 0.75rem;
-          font-size: 1.1rem;
-          margin-bottom: 0;
-        }
+    .feature-photo {
+        line-height: 0;
 
         @include desktop {
-          margin-bottom: 0;
-          padding: 0 0.75rem;
-        }
+            margin-right: 1rem;
+            max-width: 43rem;
 
-      }
+
+            img {
+                clip-path: circle(80%);
+                transition: clip-path 1s;
+            }
+
+            &:hover {
+                filter: drop-shadow(.4rem .4rem .4rem rgba(0,0,0,0.6));
+
+                img {
+                    clip-path: circle(32%);
+                }
+
+            }
+
+        }
 
     }
 
-  }
+    .feature-copy {
+
+        @include desktop {
+            width: 20rem;
+        }
+
+        p {
+
+            &.intro {
+
+                @include touch {
+                    padding: 1rem 0.75rem;
+                    font-size: 1.1rem;
+                    margin-bottom: 0;
+                }
+
+                @include desktop {
+                    margin-bottom: 0;
+                    padding: 0 0.75rem;
+                }
+
+            }
+
+        }
+
+    }
 
 }
 
 .feature-pullout {
 
-  h4 {
-    margin: 0;
-  }
-
-  ul {
-    margin: 0;
-    max-width: none;
-
-    li {
-      color: hsl(0, 0%, 20%);
-      font-weight: 400;
-      line-height: 2;
-
-      @include touch {
-        line-height: 1.4;
-      }
-
+    h4 {
+        margin: 0;
     }
 
-  }
+    ul {
+        margin: 0;
+        max-width: none;
+
+        li {
+            color: hsl(0, 0%, 20%);
+            font-weight: 400;
+            line-height: 2;
+
+            @include touch {
+                line-height: 1.4;
+            }
+
+        }
+
+    }
 
 }

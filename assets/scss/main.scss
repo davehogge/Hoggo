@@ -2,43 +2,43 @@
 
 // Import Fonts
 @font-face {
-	font-family: "Work Sans";
-	font-style: normal;
-	font-weight: 400;
-  src: url('/fonts/Work_Sans/work-sans-v13-latin-regular.woff2') format('woff2'),
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Work_Sans/work-sans-v13-latin-regular.woff2') format('woff2'),
        url('/fonts/Work_Sans/work-sans-v13-latin-regular.woff') format('woff'),
        url('/fonts/Work_Sans/work-sans-v13-latin-regular.ttf') format('truetype');
-  font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
 	font-family: "Work Sans";
 	font-style: normal;
 	font-weight: 600;
-  src: url('/fonts/Work_Sans/work-sans-v13-latin-600.woff2') format('woff2'),
+    src: url('/fonts/Work_Sans/work-sans-v13-latin-600.woff2') format('woff2'),
        url('/fonts/Work_Sans/work-sans-v13-latin-600.woff') format('woff'),
        url('/fonts/Work_Sans/work-sans-v13-latin-600.ttf') format('truetype');
-  font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
 	font-family: "Work Sans";
 	font-style: normal;
 	font-weight: 900;
-  src: url('/fonts/Work_Sans/work-sans-v13-latin-900.woff2') format('woff2'),
+    src: url('/fonts/Work_Sans/work-sans-v13-latin-900.woff2') format('woff2'),
        url('/fonts/Work_Sans/work-sans-v13-latin-900.woff') format('woff'),
        url('/fonts/Work_Sans/work-sans-v13-latin-900.ttf') format('truetype');
-  font-display: swap;
+    font-display: swap;
 }
 
 @font-face {
 	font-family: "Condiment";
 	font-style: normal;
 	font-weight: 400;
-  src: url('/fonts/Condiment/condiment-v10-latin-regular.woff2') format('woff2'),
+    src: url('/fonts/Condiment/condiment-v10-latin-regular.woff2') format('woff2'),
        url('/fonts/Condiment/condiment-v10-latin-regular.woff') format('woff'),
        url('/fonts/Condiment/condiment-v10-latin-regular.ttf') format('truetype');
-  font-display: fallback;
+    font-display: fallback;
 }
 
 // Bulma Framework Imports

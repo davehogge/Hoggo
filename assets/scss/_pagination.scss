@@ -1,34 +1,34 @@
 //pagination
 .pagination {
-	font-size: 1rem;
+    font-size: 1rem;
 
-	li {
+    li {
 
-		&:first-of-type,
-		&:last-of-type {
+        &:first-of-type,
+        &:last-of-type {
 
-			@include touch {
-				width: 100%;
-			}
+            @include touch {
+                width: 100%;
+            }
 
-			a {
+            a {
 
-				@include touch {
-					display:flex;
-					margin-left: 1rem;
-					margin-right: 1rem;
-				}
+                @include touch {
+                    display:flex;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
 
-				&.pagination-link,
-				&.pagination-next {
+                &.pagination-link,
+                &.pagination-next {
 
-					&:hover {
-						text-decoration: none;
-					}
+                    &:hover {
+                        text-decoration: none;
+                    }
 
-					&.is-disabled {
-						color: hsl(0, 0%, 62%);
-					}
+                    &.is-disabled {
+                        color: hsl(0, 0%, 62%);
+                    }
 
 				}
 

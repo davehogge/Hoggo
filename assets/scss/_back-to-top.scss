@@ -6,22 +6,22 @@
     z-index: 1;
 
     &.show {
-      bottom: 2rem;
+        bottom: 2rem;
     }
 
     a {
-      color: hsl(201, 64.9%, 62%);
-      display: block;
-      padding: 1.5rem;
+        color: hsl(201, 64.9%, 62%);
+        display: block;
+        padding: 1.5rem;
 
         &:hover {
-          color: hsl(80, 1.2%, 50%);
+            color: hsl(80, 1.2%, 50%);
         }
 
         .icon {
-          display: inline-block;
-          height: 1em;
-          width: 1em;
+            display: inline-block;
+            height: 1em;
+            width: 1em;
         }
 
     }
