@@ -4,6 +4,7 @@
 {{- $copy := resources.Get "js/copy.js" | resources.ExecuteAsTemplate (printf "%s/js/copy-rendered.js" .Lang) . -}}
 {{- $lazyslzes := resources.Get "js/lazyslzes.js" | resources.ExecuteAsTemplate (printf "%s/js/lazyslzes-rendered.js" .Lang) . -}}
 {{- $console := resources.Get "js/console.js" | resources.ExecuteAsTemplate (printf "%s/js/console-rendered.js" .Lang) . -}}
+{{- $backgroundRotation := resources.Get "js/background-rotation.js" | resources.ExecuteAsTemplate (printf "%s/js/background-rotation-rendered.js" .Lang) . -}}
 
 {{- .Scratch.Set "script" (slice $throttle) -}}
 
@@ -12,6 +13,7 @@
 {{- .Scratch.Add "script" (slice $copy) -}}
 {{- .Scratch.Add "script" (slice $lazyslzes) -}}
 {{- .Scratch.Add "script" (slice $console) -}}
+{{- .Scratch.Add "script" (slice $backgroundRotation) -}}
 
 {{- $path := (strings.TrimPrefix "/" (printf `%s/js/hoggo.js` .Site.LanguagePrefix)) -}}
 
