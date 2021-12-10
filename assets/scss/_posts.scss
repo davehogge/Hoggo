@@ -1,3 +1,6 @@
+// Imports
+@import 'variables';
+
 // Posts
 .post {
 
@@ -9,10 +12,9 @@
         max-width: 64rem;
 
         img {
-            border: none;
-            border-radius: 1rem;
-            box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.1);
-            margin: 20px auto 0;
+            border: 3px solid $color-base;
+            box-shadow: 10px 10px $color-medium-light;
+            margin: 1.25rem auto 0.85rem;
         }
 
         figcaption {
@@ -23,9 +25,9 @@
     }
 
     .level {
-        background-color: hsl(0, 0%, 100%);
-        border-radius: 1rem;
-        box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.1);
+        background-color: $color-solid-top;
+        border: 1px solid $color-base;
+        box-shadow: 10px 10px $color-medium-light;
         max-width: 64rem;
         margin: 0 auto 2rem;
         padding: 0.5rem;
@@ -51,7 +53,7 @@
     h4,
     h5,
     h6{
-        color: hsl(0, 0%, 20%);
+        color: $color-base;
         font-weight: 600;
         letter-spacing: -.75px;
         line-height: 1.3;
@@ -88,7 +90,7 @@
     }
 
     hr {
-        background: hsl(0, 0%, 88%);
+        background: $color-medium-light;
         border: none;
         border-radius: 3px;
         height: 3px;
@@ -102,8 +104,8 @@
     }
 
     blockquote {
-        background-color: hsl(0, 0%, 100%);
-        color: hsl(218, 9%, 46%);
+        background-color: $color-solid-top;
+        color: $color-medium;
         display: block;
         font-size: 1rem;
         font-weight: 600;
@@ -124,7 +126,7 @@
         }
 
         &:before {
-            background: hsl(38, 40%, 61%);
+            background: $color-bright;
             border-radius: 6px;
             content: " ";
             height: calc(100%);
@@ -154,7 +156,7 @@
     }
 
     table {
-        background-color: hsl(0, 0%, 100%);
+        background-color: $color-solid-top;
         border-collapse: collapse;
         border-spacing: 0;
 
@@ -191,8 +193,8 @@
 
     pre {
         display: block;
-        background-color: hsl(0, 0%, 29%);
-        color: hsl(0, 0%, 96%);
+        background-color: $color-dark;
+        color: $color-top;
         margin: 0 auto 2rem auto;
         max-width: 64rem;
     }

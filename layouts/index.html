@@ -2,7 +2,7 @@
 <main class="is-home">
 
   <div class="hero-wrapper">
-  <section id="hero" class="is-hero background-1" role="banner" aria-labelledby="homeTitle">
+  <section id="hero" class="is-hero" role="banner" aria-labelledby="homeTitle">
 
     <h1 id="homeTitle">{{ .Site.Params.homeTitle }}</h1>
     <h2>{{ .Site.Params.homeSubTitle }}</h2>
@@ -21,8 +21,10 @@
     {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 5 }}
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
       <article>
-        {{ partial "list-thumbnail.html" . }}
-        {{ partial "list-copy.html" . }}
+        <a href="{{ .Permalink }}">
+            {{ partial "list-thumbnail.html" . }}
+            {{ partial "list-copy.html" . }}
+        </a>
       </article>
     {{ end }}
   </section>

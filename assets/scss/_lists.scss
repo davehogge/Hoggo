@@ -1,3 +1,7 @@
+// Imports
+@import 'variables';
+
+// Post List Page
 .post-list {
     list-style-type: none;
     margin: 3.75rem auto;
@@ -14,7 +18,7 @@
     article {
 
         &:after {
-            background: hsl(0, 0%, 88%);
+            background: $color-medium-light;
             border: none;
             border-radius: 3px;
             content: ' ';
@@ -32,17 +36,8 @@
 
         }
 
-        a {
-            font-weight: 400;
-
-            &:hover {
-                text-decoration: none;
-            }
-
-        }
-
         h3 {
-            color: hsl(0, 0%, 62%);
+            color: $color-dark;
             font-size: 0.95rem;
             font-weight: 600;
             line-height: 2;
@@ -50,36 +45,66 @@
             text-transform: capitalize;
         }
 
-        h2 {
-            color: hsl(38, 40%, 61%);
-            font-size: 1.875rem;
-            line-height: 1;
-            margin: 0;
-            padding: 0;
+        a {
+            font-weight: 400;
+
+            h2 {
+                color: $color-base;
+                background-image: linear-gradient(120deg, $color-bright 0%, $color-bright 100%);
+                background-repeat: no-repeat;
+                background-size: 100% 3px;
+                background-position: 0px 100%;
+                display: inline;
+                font-size: 1.875rem;
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+                transition: all 0.15s ease-in-out 0s;
+            }
+
+            figure {
+                margin-bottom: 1rem;
+
+                img {
+                    filter: grayscale(0.5) hue-rotate(30deg);
+                    border: 3px solid $color-base;
+                    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+                    box-shadow: 20px 20px $color-light-top;
+                    mix-blend-mode: multiply;
+                    transition: all .4s ease;
+                }
+
+            }
+
+            p {
+                color: $color-base;
+                font-size: 1rem;
+                margin: .5rem 0 0;
+            }
 
             &:hover {
-                color: hsl(37, 27%, 41%);
+
+                h2 {
+    				color: $color-top;
+        			background-size: 100% 100%;
+    			}
+
+                figure {
+
+                    img {
+                        box-shadow: 10px 10px $color-medium-light;
+                        filter: none;
+                        mix-blend-mode: normal;
+                    }
+
+                }
+
             }
 
-        }
-
-        figure {
-
-            img {
-                border-radius: 1rem;
-                box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.1);
-            }
-
-        }
-
-        p {
-            color: hsl(0, 0%, 20%);
-            font-size: 1rem;
-            margin: .5rem 0 1rem;
         }
 
         .post-metadata {
-            color: hsl(0, 0%, 20%);
+            color: $color-base;
             font-size: 0.875rem;
             margin: 0;
         }

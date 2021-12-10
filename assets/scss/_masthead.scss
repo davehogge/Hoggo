@@ -1,9 +1,11 @@
+// Imports
+@import 'variables';
+
 // Masthead
 .masthead {
-    background: hsl(0, 0%, 99.6%);
-    border-bottom: 0.065rem solid hsl(0, 0%, 94%);
-    box-shadow: 0 0.13rem 0.13rem rgba(0, 0, 0, .05);
-    color: hsl(240, 7%, 40%);
+    background: $color-solid-top;
+    border-bottom: 0.065rem dotted $color-base;
+    color: $color-medium;
     font-size: 1rem;
     margin: 0 auto;
     max-height: 3.313rem;
@@ -56,13 +58,13 @@
             transform: rotate(-2deg);
 
             a {
-                color: hsl(312, 3%, 66%);
+                color: $color-dark;
                 cursor: pointer;
                 font-weight: 600;
                 text-decoration: none;
 
                 &:hover {
-                    color: hsl(38, 40%, 61%);
+                    color: $color-base;
                     font-size: 2.5rem;
                     transition: all .3s ease-in-out;
                 }

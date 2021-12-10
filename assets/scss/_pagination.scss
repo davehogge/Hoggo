@@ -1,4 +1,7 @@
-//pagination
+// Imports
+@import 'variables';
+
+//Pagination
 .pagination {
     font-size: 1rem;
 
@@ -12,6 +15,7 @@
             }
 
             a {
+                border-radius: 0;
 
                 @include touch {
                     display:flex;
@@ -27,7 +31,8 @@
                     }
 
                     &.is-disabled {
-                        color: hsl(0, 0%, 62%);
+                        background-image: none;
+                        color: $color-dark;
                     }
 
 				}

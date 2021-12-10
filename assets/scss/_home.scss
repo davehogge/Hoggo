@@ -1,4 +1,7 @@
-// home page
+// Imports
+@import 'variables';
+
+// Home Page
 main {
 
     &.is-home {
@@ -10,20 +13,23 @@ main {
 
         // hero section
         .is-hero {
-            background-color: hsl(0, 0%, 20%);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            box-shadow: inset 0 0 0 2000px rgba(0,0,0,.2);
+            box-shadow: inset 0 0 0 2000px hsla(0, 0, 0, 0.2);
             height: 100vh;
             width: 100vw;
             position: relative;
-            animation: 1s circle-enter;
+            animation: 2s drop-curtain;
 
-            @keyframes circle-enter {
-                0% { clip-path: circle(0% at 50% 50%); }
-                100% { clip-path: circle(70.7% at 50% 50%); }
+            @keyframes drop-curtain {
+              0% {
+                  clip-path: inset(0 0 100% 0);
+              }
+              100% {
+                  clip-path: inset(0);
+              }
             }
 
             &.background-1 {
@@ -46,15 +52,55 @@ main {
 
             }
 
+            &.background-2 {
+
+                @include mobile {
+                    background-image: url('/images/home/mtp-sm.jpg');
+                }
+
+                @include tablet-only {
+                    background-image: url('/images/home/mtp-med.jpg');
+                }
+
+                @include desktop-only {
+                    background-image: url('/images/home/mtp-lg.jpg');
+                }
+
+                @include widescreen {
+                    background-image: url('/images/home/mtp-xlg.jpg');
+                }
+
+            }
+
+            &.background-3 {
+
+                @include mobile {
+                    background-image: url('/images/home/workstation-sm.jpg');
+                }
+
+                @include tablet-only {
+                    background-image: url('/images/home/workstation-med.jpg');
+                }
+
+                @include desktop-only {
+                    background-image: url('/images/home/workstation-lg.jpg');
+                }
+
+                @include widescreen {
+                    background-image: url('/images/home/workstation-xlg.jpg');
+                }
+
+            }
+
             h1 {
                 padding: 0 0 4.5rem 0;
                 padding-top: 20vh;
                 font-size: 7.5rem;
                 line-height: .8;
                 text-align: center;
-                font-family: 'Condiment', cursive;
+                font-family: $font-family-secondary;
                 transform: rotate(-10deg);
-                color: hsl(0, 0%, 98%);
+                color: $color-top;
                 z-index: 10;
 
                 @include until(667px) {
@@ -80,7 +126,7 @@ main {
                 font-size: 1rem;
                 font-style: italic;
                 text-align: center;
-                color: hsl(0, 0%, 98%);
+                color: $color-top;
 
                 @include mobile {
                     font-size: .85rem;
@@ -99,7 +145,7 @@ main {
                 &:after {
 
                     @include tablet {
-                        background-color: hsl(212, 10%, 67%);
+                        background-color: $color-top;
                         content: "";
                         display: inline-block;
                         height: 1px;
@@ -137,12 +183,13 @@ main {
                     }
 
                     a {
+                        background-image: none;
                         display: inline-block;
                         padding: 0 10px;
                         line-height: 1;
                         text-align: center;
-                        font-family: 'Condiment', cursive;
-                        color: hsl(0, 0%, 98%);
+                        font-family: $font-family-secondary;
+                        color: $color-top;
                         transition: all .3s ease-in-out;
                         text-decoration: none;
                         font-size: 2rem;
@@ -195,7 +242,7 @@ main {
             padding-top: 60px;
 
             &-heading {
-                color: hsl(0, 0%, 20%);
+                color: $color-base;
                 font-weight: 400;
                 font-size: 1.5rem;
 

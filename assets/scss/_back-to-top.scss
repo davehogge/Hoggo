@@ -1,3 +1,7 @@
+// Imports
+@import 'variables';
+
+// Back to Top
 .back-to-top {
     bottom: -3rem;
     position: fixed;
@@ -10,12 +14,12 @@
     }
 
     a {
-        color: hsl(201, 64.9%, 62%);
+        color: $color-bright;
         display: block;
         padding: 1.5rem;
 
         &:hover {
-            color: hsl(80, 1.2%, 50%);
+            color: $color-dark;
         }
 
         .icon {

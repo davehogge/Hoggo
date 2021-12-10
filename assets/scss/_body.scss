@@ -1,28 +1,30 @@
+// Imports
+@import 'variables';
+
 // Body Overides
 html {
-    background: hsl(0, 0%, 20%);
+    background: $color-base;
 }
 
 body {
     -moz-osx-font-smoothing: grayscale;
-    background: hsl(0, 0%, 20%);
-    color: hsl(0, 0%, 20%);
-    font-family: "Work Sans",Helvetica,Roboto,Arial,sans-serif;
-    font-size: 1.172rem;
+    background: $color-base;
+    color: $color-base;
+    font-family: $font-family-primary;
+    font-size: $font-size-base;
     font-weight: 400;
     line-height: 1.6;
 }
 
 main {
-    background: hsl(0, 0%, 96%);
+    background: $color-top;
     padding-bottom: 3.75rem;
     padding-top: 3.75rem;
 
 	a {
-        //color: hsl(38, 40%, 61%);
-		color: hsl(0, 0%, 20%);
+		color: $color-base;
 		font-weight: 600;
-        background-image: linear-gradient(120deg, hsl(38, 40%, 61%) 0%, hsl(38, 40%, 61%) 100%);
+        background-image: linear-gradient(120deg, $color-bright 0%, $color-bright 100%);
         background-repeat: no-repeat;
         background-size: 100% 3px;
         background-position: 0px 100%;
@@ -31,29 +33,34 @@ main {
 		&:not(.button) {
 
 			&:hover {
-				//color: hsl(37, 27%, 41%);
-				//text-decoration: underline;
-				color: hsl(0, 0%, 96%);
+				color: $color-top;
 				background-size: 100% 100%;
-
 			}
+
+            //&:focus {
+                //outline: rgb(255, 34, 201) solid 2px;
+                //background: rgb(49, 15, 122) none repeat scroll 0% 0%;
+                //color: rgb(255, 255, 255);
+            //}
 
 		}
 
 	}
 
 	.button {
-        background-image: none;
+        border-radius: 0;
 
 		&:hover {
-			border-color: hsl(37, 27%, 41%);
+            color: $color-top;
+            background-size: 100% 100%;
+			border-color: $color-bright;
 		}
 
 		&.is-link {
-			background-color: hsl(38, 40%, 61%);
+			background-color: $color-bright;
 
 			&:hover {
-				background-color: hsl(37, 27%, 41%);
+				background-color: $color-bright;
 			}
 
 		}
@@ -118,7 +125,7 @@ main {
     }
 
     h2 {
-        color: hsl(0, 0%, 62%);
+        color: $color-dark;
         font-size: 1.6rem;
         font-weight: 600;
         line-height: 1.5;

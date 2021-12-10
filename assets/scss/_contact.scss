@@ -1,4 +1,7 @@
-// contact page
+// Imports
+@import 'variables';
+
+// Contact Page
 #contact-form {
 
     .label {
@@ -22,46 +25,97 @@ ul {
             display: inline-flex;
             font-size: 1rem;
             padding: 0 1.5rem 0.75rem 0;
+
+
         }
 
     }
 
 }
 
-.social-icon {
-    display: inline-block;
-    padding-left: 22px;
-    background-size: 19px 19px;
-    background-position: 0 3px;
-    background-repeat: no-repeat;
-}
+main {
 
-.github {
-    background-image: url('/images/icons/github.svg');
-}
+    a {
 
-.linkedin {
-    background-image: url('/images/icons/linkedin.svg');
-}
+        &.social-icon {
+            background-size: calc(100% - 22px) 3px;
+            background-position: 100% 100%;
 
-.reddit {
-    background-image: url('/images/icons/reddit.svg');
-}
+            &:before {
+                content: "";
+                display: inline-block;
+                background-size: 19px 19px;
+                background-position: 0;
+                background-repeat: no-repeat;
+                height: 19px;
+                margin-right: 3px;
+                width: 19px;
+            }
 
-.stackoverflow {
-    background-image: url('/images/icons/stack-overflow.svg');
-}
+            &:hover {
+                background-size: calc(100% - 22px) 100%;
+            }
 
-.steam {
-    background-image: url('/images/icons/steam.svg');
-}
+        }
 
-.strava {
-    background-image: url('/images/icons/strava.svg');
-}
+        &.github {
 
-.twitter {
-    background-image: url('/images/icons/twitter.svg');
+            &:before {
+                background-image: url('/images/icons/github.svg');
+            }
+
+        }
+
+        &.linkedin {
+
+            &:before {
+                background-image: url('/images/icons/linkedin.svg');
+            }
+
+        }
+
+        &.reddit {
+
+            &:before {
+                background-image: url('/images/icons/reddit.svg');
+            }
+
+        }
+
+        &.stackoverflow {
+
+            &:before {
+                background-image: url('/images/icons/stack-overflow.svg');
+            }
+
+        }
+
+        &.steam {
+
+            &:before {
+                background-image: url('/images/icons/steam.svg');
+            }
+
+        }
+
+        &.strava {
+
+            &:before {
+                background-image: url('/images/icons/strava.svg');
+            }
+
+        }
+
+        &.twitter {
+
+            &:before {
+                background-image: url('/images/icons/twitter.svg');
+            }
+
+        }
+
+    }
+
 }
 
 .form-message {

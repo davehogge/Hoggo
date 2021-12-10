@@ -1,8 +1,11 @@
+// Imports
+@import 'variables';
+
 // Footer
 .page-footer {
-    background: hsl(0, 0%, 20%);
-    border-top: 0.5rem solid hsl(38, 40%, 61%);
-    color: hsl(312, 3%, 66%);
+    background: $color-base;
+    border-top: 0.5rem solid $color-bright;
+    color: $color-light;
     font-size: 1rem;
     margin: 0;
     padding: 3rem 0;
@@ -48,14 +51,14 @@
             }
 
             a {
-                color: hsl(312, 3%, 66%);
+                color: $color-light;
                 text-decoration: none;
                 text-transform: capitalize;
 
                 @include touch {
-                    background: hsl(280, 1%, 58%);
-                    border-radius: 3px;
-                    color: hsl(0, 0%, 20%);
+                    background: $color-light;
+                    border-radius: 0.5rem;
+                    color: $color-base;
                     display: block;
                     padding: .5em 1em;
                     margin-bottom: 1em;
@@ -69,7 +72,7 @@
                 text-decoration: underline;
 
                 @include touch {
-                    color: hsl(218, 9%, 41%);
+                    color: $color-base;
                 }
 
             }

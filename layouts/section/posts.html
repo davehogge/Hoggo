@@ -4,8 +4,10 @@
   <section class="post-list" role="region">
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
       <article role="article">
-        {{ partial "list-thumbnail.html" . }}
-        {{ partial "list-copy.html" . }}
+        <a href="{{ .Permalink }}">
+            {{ partial "list-thumbnail.html" . }}
+            {{ partial "list-copy.html" . }}
+        </a>
       </article>
     {{ end }}
   </section>

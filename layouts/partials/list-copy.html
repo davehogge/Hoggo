@@ -1,9 +1,7 @@
-<a href="{{ .Permalink }}">
-  <h2>{{ .Title }}</h2>
-  {{- if .Description -}}<p>{{ .Description }}</p>{{- end -}}
-</a>
+<h2>{{ .Title }}</h2>
+{{- if .Description -}}<p>{{ .Description }}</p>{{- end -}}
 <div class="post-metadata">
-  {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-  {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-  Published on <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+    Published on <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
 </div>

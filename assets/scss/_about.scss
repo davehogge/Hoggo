@@ -1,9 +1,12 @@
+// Imports
+@import 'variables';
+
 // about page
 .feature-area {
     align-items: center;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 32px;
-    box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.05);
+    background-color: $color-solid-top;
+    border: 3px solid $color-base;
+    box-shadow: 10px 10px $color-medium-light;
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -28,15 +31,14 @@
 
 
             img {
-                clip-path: circle(80%);
+                clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
                 transition: clip-path 1s;
             }
 
             &:hover {
-                filter: drop-shadow(.4rem .4rem .4rem rgba(0,0,0,0.6));
 
                 img {
-                    clip-path: circle(32%);
+                    clip-path: polygon(20% 15%,80% 15%,80% 80%,20% 80%);
                 }
 
             }
@@ -85,7 +87,7 @@
         max-width: none;
 
         li {
-            color: hsl(0, 0%, 20%);
+            color: $color-base;
             font-weight: 400;
             line-height: 2;
 

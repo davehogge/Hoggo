@@ -1,4 +1,7 @@
-// work page
+// Imports
+@import 'variables';
+
+// Work Page
 .post {
 
     &.is-work {
@@ -23,11 +26,11 @@
 
         //sections
         .panel {
-            background-color: hsl(0, 0%, 96%);
+            background-color: $color-top;
             transition: background-color 1000ms linear;
 
             &:hover {
-                background-color: hsl(198, 16%, 84%);
+                background-color: $color-back-light;
                 transition: background-color 1000ms linear;
                 transition-delay: 300ms;
             }
@@ -35,7 +38,7 @@
             section {
 
                 &:after {
-                    background: hsl(0, 0%, 88%);
+                    background: $color-medium-light;
                     border: none;
                     border-radius: 3px;
                     content: ' ';
@@ -179,10 +182,12 @@
 
             // portfolio items
             .portfolio-item {
-                background: hsl(0, 0%, 100%);
-                border-radius: 32px;
-                box-shadow: 0 0.13rem 0.13rem rgba(0,0,0,0.05);
+                background: $color-solid-top;
+                border: 3px solid $color-base;
+                border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+                box-shadow: 20px 20px $color-light-top;
                 line-height: 1;
+                transition: all .4s ease;
 
                 @include touch {
                     margin: 0 1rem 4rem;
@@ -197,7 +202,8 @@
                 }
 
                 &:hover {
-                    box-shadow: 0.13rem 0.13rem rgba(0,0,0,0.5);
+                    //box-shadow: 0.13rem 0.13rem rgba(0,0,0,0.5);
+                    box-shadow: 10px 10px $color-medium-light;
 
                     .portfolio-item-graphic {
 
