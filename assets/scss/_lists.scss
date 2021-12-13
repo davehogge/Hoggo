@@ -72,6 +72,13 @@
                     box-shadow: 20px 20px var(--color-light-top);
                     mix-blend-mode: multiply;
                     transition: all .4s ease;
+
+                    @include touch {
+                        filter: none;
+                        border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+                        box-shadow: 10px 10px var(--color-light-top);
+                    }
+
                 }
 
             }

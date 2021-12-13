@@ -190,6 +190,7 @@
                 transition: all .4s ease;
 
                 @include touch {
+                    box-shadow: 10px 10px var(--color-light-top);
                     margin: 0 1rem 4rem;
                     padding: 2rem 1rem 1rem;
                 }
