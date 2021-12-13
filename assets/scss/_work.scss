@@ -26,11 +26,11 @@
 
         //sections
         .panel {
-            background-color: $color-top;
+            background-color: var(--color-top);
             transition: background-color 1000ms linear;
 
             &:hover {
-                background-color: $color-back-light;
+                background-color: var(--color-back-light);
                 transition: background-color 1000ms linear;
                 transition-delay: 300ms;
             }
@@ -38,7 +38,7 @@
             section {
 
                 &:after {
-                    background: $color-medium-light;
+                    background: var(--color-medium-light);
                     border: none;
                     border-radius: 3px;
                     content: ' ';
@@ -182,10 +182,10 @@
 
             // portfolio items
             .portfolio-item {
-                background: $color-solid-top;
-                border: 3px solid $color-base;
+                background: var(--color-solid-top);
+                border: 3px solid var(--color-base);
                 border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-                box-shadow: 20px 20px $color-light-top;
+                box-shadow: 20px 20px var(--color-light-top);
                 line-height: 1;
                 transition: all .4s ease;
 
@@ -202,8 +202,7 @@
                 }
 
                 &:hover {
-                    //box-shadow: 0.13rem 0.13rem rgba(0,0,0,0.5);
-                    box-shadow: 10px 10px $color-medium-light;
+                    box-shadow: 10px 10px var(--color-medium-light);
 
                     .portfolio-item-graphic {
 

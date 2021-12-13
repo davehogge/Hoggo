@@ -4,9 +4,9 @@
 // about page
 .feature-area {
     align-items: center;
-    background-color: $color-solid-top;
-    border: 3px solid $color-base;
-    box-shadow: 10px 10px $color-medium-light;
+    background-color: var(--color-solid-top);
+    border: 3px solid var(--color-base);
+    box-shadow: 10px 10px var(--color-medium-light);
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -87,7 +87,7 @@
         max-width: none;
 
         li {
-            color: $color-base;
+            color: var(--color-base);
             font-weight: 400;
             line-height: 2;
 

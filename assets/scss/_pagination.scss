@@ -32,7 +32,7 @@
 
                     &.is-disabled {
                         background-image: none;
-                        color: $color-dark;
+                        color: var(--color-dark);
                     }
 
 				}

@@ -12,8 +12,8 @@
         max-width: 64rem;
 
         img {
-            border: 3px solid $color-base;
-            box-shadow: 10px 10px $color-medium-light;
+            border: 3px solid var(--color-base);
+            box-shadow: 10px 10px var(--color-medium-light);
             margin: 1.25rem auto 0.85rem;
         }
 
@@ -25,9 +25,9 @@
     }
 
     .level {
-        background-color: $color-solid-top;
-        border: 1px solid $color-base;
-        box-shadow: 10px 10px $color-medium-light;
+        background-color: var(--color-solid-top);
+        border: 1px solid var(--color-base);
+        box-shadow: 10px 10px var(--color-medium-light);
         max-width: 64rem;
         margin: 0 auto 2rem;
         padding: 0.5rem;
@@ -53,7 +53,7 @@
     h4,
     h5,
     h6{
-        color: $color-base;
+        color: var(--color-base);
         font-weight: 600;
         letter-spacing: -.75px;
         line-height: 1.3;
@@ -90,7 +90,7 @@
     }
 
     hr {
-        background: $color-medium-light;
+        background: var(--color-medium-light);
         border: none;
         border-radius: 3px;
         height: 3px;
@@ -104,8 +104,8 @@
     }
 
     blockquote {
-        background-color: $color-solid-top;
-        color: $color-medium;
+        background-color: var(--color-solid-top);
+        color: var(--color-medium);
         display: block;
         font-size: 1rem;
         font-weight: 600;
@@ -126,7 +126,7 @@
         }
 
         &:before {
-            background: $color-bright;
+            background: var(--color-bright);
             border-radius: 6px;
             content: " ";
             height: calc(100%);
@@ -156,7 +156,7 @@
     }
 
     table {
-        background-color: $color-solid-top;
+        background-color: var(--color-solid-top);
         border-collapse: collapse;
         border-spacing: 0;
 
@@ -193,14 +193,12 @@
 
     pre {
         display: block;
-        background-color: $color-dark;
-        color: $color-top;
         margin: 0 auto 2rem auto;
         max-width: 64rem;
     }
 
-    code {
-        padding: 0;
+    .copy-button {
+        display: none;
     }
 
     iframe,

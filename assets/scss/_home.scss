@@ -98,9 +98,9 @@ main {
                 font-size: 7.5rem;
                 line-height: .8;
                 text-align: center;
-                font-family: $font-family-secondary;
+                font-family: var(--font-family-secondary);
                 transform: rotate(-10deg);
-                color: $color-top;
+                color: var(--color-top);
                 z-index: 10;
 
                 @include until(667px) {
@@ -126,7 +126,7 @@ main {
                 font-size: 1rem;
                 font-style: italic;
                 text-align: center;
-                color: $color-top;
+                color: var(--color-top);
 
                 @include mobile {
                     font-size: .85rem;
@@ -145,7 +145,7 @@ main {
                 &:after {
 
                     @include tablet {
-                        background-color: $color-top;
+                        background-color: var(--color-top);
                         content: "";
                         display: inline-block;
                         height: 1px;
@@ -188,8 +188,8 @@ main {
                         padding: 0 10px;
                         line-height: 1;
                         text-align: center;
-                        font-family: $font-family-secondary;
-                        color: $color-top;
+                        font-family: var(--font-family-secondary);
+                        color: var(--color-top);
                         transition: all .3s ease-in-out;
                         text-decoration: none;
                         font-size: 2rem;
@@ -242,7 +242,7 @@ main {
             padding-top: 60px;
 
             &-heading {
-                color: $color-base;
+                color: var(--color-base);
                 font-weight: 400;
                 font-size: 1.5rem;
 

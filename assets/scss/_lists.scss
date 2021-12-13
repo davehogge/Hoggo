@@ -18,7 +18,7 @@
     article {
 
         &:after {
-            background: $color-medium-light;
+            background: var(--color-medium-light);
             border: none;
             border-radius: 3px;
             content: ' ';
@@ -37,7 +37,7 @@
         }
 
         h3 {
-            color: $color-dark;
+            color: var(--color-dark);
             font-size: 0.95rem;
             font-weight: 600;
             line-height: 2;
@@ -49,8 +49,8 @@
             font-weight: 400;
 
             h2 {
-                color: $color-base;
-                background-image: linear-gradient(120deg, $color-bright 0%, $color-bright 100%);
+                color: var(--color-base);
+                background-image: linear-gradient(120deg, var(--color-bright) 0%, var(--color-bright) 100%);
                 background-repeat: no-repeat;
                 background-size: 100% 3px;
                 background-position: 0px 100%;
@@ -67,9 +67,9 @@
 
                 img {
                     filter: grayscale(0.5) hue-rotate(30deg);
-                    border: 3px solid $color-base;
+                    border: 3px solid var(--color-base);
                     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-                    box-shadow: 20px 20px $color-light-top;
+                    box-shadow: 20px 20px var(--color-light-top);
                     mix-blend-mode: multiply;
                     transition: all .4s ease;
                 }
@@ -77,7 +77,7 @@
             }
 
             p {
-                color: $color-base;
+                color: var(--color-base);
                 font-size: 1rem;
                 margin: .5rem 0 0;
             }
@@ -85,14 +85,14 @@
             &:hover {
 
                 h2 {
-    				color: $color-top;
+    				color: var(--color-top);
         			background-size: 100% 100%;
     			}
 
                 figure {
 
                     img {
-                        box-shadow: 10px 10px $color-medium-light;
+                        box-shadow: 10px 10px var(--color-medium-light);
                         filter: none;
                         mix-blend-mode: normal;
                     }
@@ -104,7 +104,7 @@
         }
 
         .post-metadata {
-            color: $color-base;
+            color: var(--color-base);
             font-size: 0.875rem;
             margin: 0;
         }

@@ -1,30 +1,47 @@
 // Imports
 @import 'variables';
 
+// Root
+:root {
+    --font-family-primary: #{$font-family-primary};
+    --font-family-secondary: #{$font-family-secondary};
+    --font-size-base: #{$font-size-base};
+    --color-base: #{$color-base};
+    --color-dark: #{$color-dark};
+    --color-medium: #{$color-medium};
+    --color-medium-light: #{$color-medium-light};
+    --color-light: #{$color-light};
+    --color-bright: #{$color-bright};
+    --color-light-top: #{$color-light-top};
+    --color-top: #{$color-top};
+    --color-solid-top: #{$color-solid-top};
+    --color-back-light: #{$color-back-light};
+}
+
 // Body Overides
 html {
-    background: $color-base;
+    background: var(--color-base);
 }
 
 body {
     -moz-osx-font-smoothing: grayscale;
-    background: $color-base;
-    color: $color-base;
-    font-family: $font-family-primary;
-    font-size: $font-size-base;
+    background: var(--color-base);
+    color: var(--color-base);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
     font-weight: 400;
     line-height: 1.6;
 }
 
 main {
-    background: $color-top;
+    background: var(--color-top);
     padding-bottom: 3.75rem;
     padding-top: 3.75rem;
 
 	a {
-		color: $color-base;
+		color: var(--color-base);
 		font-weight: 600;
-        background-image: linear-gradient(120deg, $color-bright 0%, $color-bright 100%);
+        background-image: linear-gradient(120deg, var(--color-bright) 0%, var(--color-bright) 100%);
         background-repeat: no-repeat;
         background-size: 100% 3px;
         background-position: 0px 100%;
@@ -33,7 +50,7 @@ main {
 		&:not(.button) {
 
 			&:hover {
-				color: $color-top;
+				color: var(--color-top);
 				background-size: 100% 100%;
 			}
 
@@ -51,16 +68,16 @@ main {
         border-radius: 0;
 
 		&:hover {
-            color: $color-top;
+            color: var(--color-top);
             background-size: 100% 100%;
-			border-color: $color-bright;
+			border-color: var(--color-bright);
 		}
 
 		&.is-link {
-			background-color: $color-bright;
+			background-color: var(--color-bright);
 
 			&:hover {
-				background-color: $color-bright;
+				background-color: var(--color-bright);
 			}
 
 		}
@@ -125,7 +142,7 @@ main {
     }
 
     h2 {
-        color: $color-dark;
+        color: var(--color-dark);
         font-size: 1.6rem;
         font-weight: 600;
         line-height: 1.5;

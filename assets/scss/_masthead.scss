@@ -3,9 +3,9 @@
 
 // Masthead
 .masthead {
-    background: $color-solid-top;
-    border-bottom: 0.065rem dotted $color-base;
-    color: $color-medium;
+    background: var(--color-solid-top);
+    border-bottom: 0.065rem dotted var(--color-base);
+    color: var(--color-medium);
     font-size: 1rem;
     margin: 0 auto;
     max-height: 3.313rem;
@@ -43,7 +43,7 @@
         }
 
         h1 {
-            font-family: Condiment;
+            font-family: var(--font-family-secondary);
             font-style: normal;
             font-size: 2rem;
             font-weight: 600;
@@ -58,13 +58,13 @@
             transform: rotate(-2deg);
 
             a {
-                color: $color-dark;
+                color: var(--color-dark);
                 cursor: pointer;
                 font-weight: 600;
                 text-decoration: none;
 
                 &:hover {
-                    color: $color-base;
+                    color: var(--color-base);
                     font-size: 2.5rem;
                     transition: all .3s ease-in-out;
                 }

@@ -3,9 +3,9 @@
 
 // Footer
 .page-footer {
-    background: $color-base;
-    border-top: 0.5rem solid $color-bright;
-    color: $color-light;
+    background: var(--color-base);
+    border-top: 0.5rem solid var(--color-bright);
+    color: var(--color-light);
     font-size: 1rem;
     margin: 0;
     padding: 3rem 0;
@@ -51,14 +51,13 @@
             }
 
             a {
-                color: $color-light;
+                color: var(--color-light);
                 text-decoration: none;
                 text-transform: capitalize;
 
                 @include touch {
-                    background: $color-light;
-                    border-radius: 0.5rem;
-                    color: $color-base;
+                    background: var(--color-light);
+                    color: var(--color-base);
                     display: block;
                     padding: .5em 1em;
                     margin-bottom: 1em;
@@ -72,7 +71,7 @@
                 text-decoration: underline;
 
                 @include touch {
-                    color: $color-base;
+                    color: var(--color-base);
                 }
 
             }

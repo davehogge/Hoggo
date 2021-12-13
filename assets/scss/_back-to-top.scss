@@ -14,12 +14,12 @@
     }
 
     a {
-        color: $color-bright;
+        color: var(--color-bright);
         display: block;
         padding: 1.5rem;
 
         &:hover {
-            color: $color-dark;
+            color: var(--color-dark);
         }
 
         .icon {
