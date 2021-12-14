@@ -100,3 +100,18 @@
     }
 
 }
+
+// sub navigation
+.sub-navigation {
+    margin: 2rem auto 4rem;
+
+    .is-disabled {
+        font-weight: 600;
+
+        &:hover {
+            color: var(--color-base);
+        }
+
+    }
+
+}
