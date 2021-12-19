@@ -114,4 +114,12 @@
 
     }
 
+    .button {
+
+        @include touch {
+            margin-bottom: .5rem;    
+        }
+
+    }
+
 }
