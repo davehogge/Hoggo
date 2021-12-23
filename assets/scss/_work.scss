@@ -185,7 +185,7 @@
                 background: var(--color-solid-top);
                 border: 3px solid var(--color-base);
                 border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-                box-shadow: 20px 20px var(--color-light-top);
+                box-shadow: 6px 6px 0px 0px $color-medium, 12px 12px 0px 0px $color-light, 18px 18px 0px 0px $color-base, 6px 6px 12px 6px rgba(0,0,0,0);
                 line-height: 1;
                 transition: all .4s ease;
 
@@ -203,7 +203,7 @@
                 }
 
                 &:hover {
-                    box-shadow: 10px 10px var(--color-medium-light);
+                    box-shadow: 3px 3px 0px 0px $color-medium, 6px 6px 0px 0px $color-bright, 9px 9px 0px 0px $color-base, 3px 3px 6px 3px rgba(0,0,0,0);
 
                     .portfolio-item-graphic {
 
