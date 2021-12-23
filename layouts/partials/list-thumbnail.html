@@ -11,14 +11,14 @@
   {{- $alt := "" -}}
   {{- range first 1 .Params.hero -}}
     {{- $src = .src -}}
-    {{- $src = (path.Join $pathway $src) | absURL -}}
+    {{- $src = (path.Join "/" $pathway $src) -}}
     {{- $alt = .alt -}}
   {{- end -}}
 <figure>
     <picture>
         <!--<source srcset="{{ $src }}.webp" type="image/webp">-->
         <source srcset="{{ $src }}.jpg" type="image/jpeg">
-        <img src="" srcset="{{ $src }}.jpg" alt="{{ $alt }}">
+        <img src="{{ $src }}.jpg" srcset="{{ $src }}.jpg" alt="{{ $alt }}">
     </picture>
 </figure>
 {{- end -}}
